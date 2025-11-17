@@ -41,24 +41,29 @@
         </div>
 
         <a href="#contact">Contact</a>
-        
-        <!-- Dark/Light Mode Toggle Button -->
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-          <svg class="theme-icon" id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-          <svg class="theme-icon hidden" id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
+
+        <div class="nav-actions">
+          <a class="nav-cta" href="https://www.linkedin.com/in/salihsezen/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="nav-cta" href="https://github.com/salihsezen" target="_blank" rel="noreferrer">GitHub</a>
+
+          <!-- Dark/Light Mode Toggle Button -->
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="theme-icon" id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="theme-icon hidden" id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
@@ -112,7 +117,7 @@
 
     <div class="container about-grid">
 
-      <!-- ABOUT + CTA -->
+      <!-- ABOUT CARD -->
       <div class="card about-card">
         <h3>About Me · Innobi</h3>
         <p>
@@ -130,12 +135,13 @@
         </div>
       </div>
 
-      <!-- PROFESSIONAL JOURNEY -->
+      <!-- JOURNEY -->
       <div class="card about-card journey-card">
         <div class="journey-header">
           <h3>Professional Journey</h3>
           <span class="badge">10+ yrs</span>
         </div>
+
         <ul class="journey-list">
           <li>
             <div class="journey-role">Data Engineer · Senior DWH / BI Developer</div>
@@ -158,12 +164,13 @@
         </ul>
       </div>
 
-      <!-- CORE TECHNICAL SKILLS WITH RATINGS -->
+      <!-- SKILL RATINGS CARD (Tek versiyon, temiz) -->
       <div class="card about-card skills-card">
         <div class="journey-header">
           <h3>Core Technical Skills</h3>
           <span class="badge">Depth</span>
         </div>
+
         <ul class="skill-ratings">
           <li>
             <div class="skill-top"><span>AWS S3 · Glue · Athena · Lambda · Redshift</span><span class="score">7.5 / 10</span></div>
@@ -238,52 +245,39 @@
 
     <div class="container skills-grid">
 
-      <!-- AWS -->
       <div class="skill-box">
         <span>AWS</span>
         <img src="assets/icons/aws.png" class="skill-icon" alt="AWS">
       </div>
 
-      <!-- PYTHON -->
       <div class="skill-box">
         <span>Python</span>
         <img src="https://cdn.simpleicons.org/python/3776AB" class="skill-icon" alt="Python">
       </div>
 
-      <!-- SQL -->
       <div class="skill-box">
         <span>SQL</span>
         <img src="https://cdn.simpleicons.org/mysql/4479A1" class="skill-icon" alt="SQL">
       </div>
 
-      <!-- REDSHIFT -->
       <div class="skill-box">
         <span>Redshift</span>
         <img src="assets/icons/redshift.png" class="skill-icon" alt="Redshift">
       </div>
 
-      <!-- POWER BI -->
       <div class="skill-box">
         <span>Power BI</span>
         <img src="assets/icons/powerbi.png" class="skill-icon" alt="Power BI">
       </div>
 
-      <!-- AZURE -->
       <div class="skill-box">
         <span>Azure</span>
         <img src="https://cdn.worldvectorlogo.com/logos/azure-1.svg" class="skill-icon" alt="Azure">
       </div>
 
-      <!-- GIT -->
       <div class="skill-box">
         <span>Git</span>
         <img src="https://cdn.simpleicons.org/git/F05032" class="skill-icon" alt="Git">
-      </div>
-
-      <!-- SSIS / ETL CUSTOM (glow will be added by CSS) -->
-      <div class="skill-box">
-        <span>ETL / SSIS</span>
-        <img src="https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg" class="skill-icon" alt="ETL">
       </div>
 
     </div>
@@ -329,6 +323,8 @@
       </ul>
     </div>
   </section>
+
+
   <!-- ========================= -->
   <!--      PROJECTS POPUP       -->
   <!-- ========================= -->
@@ -338,7 +334,6 @@
       <p>Selected Work & Live BI Platforms</p>
     </div>
 
-    <!-- PROJECTS POPUP -->
     <div class="projects-popup">
 
       <div class="popup-card">
@@ -346,7 +341,6 @@
         <p class="popup-desc">
           A production-grade AWS analytics platform to analyze U.S. trade flows and tariff exposure.
         </p>
-
         <div class="tags">
           <span class="tag cyan">Data Engineering</span>
           <span class="tag purple">DWH</span>
@@ -360,7 +354,6 @@
         <p class="popup-desc">
           Dimensional-model-driven BI environment for sales performance optimization.
         </p>
-
         <div class="tags">
           <span class="tag purple">DWH</span>
           <span class="tag blue">BI</span>
@@ -373,7 +366,6 @@
         <p class="popup-desc">
           Full-stack project & logistics control platform with reporting layer.
         </p>
-
         <div class="tags">
           <span class="tag teal">Software Dev</span>
           <span class="tag green">Architecture</span>
@@ -386,7 +378,6 @@
         <p class="popup-desc">
           A machine learning model to forecast patterns and detect anomalies.
         </p>
-
         <div class="tags">
           <span class="tag violet">AI</span>
           <span class="tag green">Machine Learning</span>
@@ -410,7 +401,6 @@
 
     <div class="container contact-grid">
 
-      <!-- CONTACT LEFT -->
       <div class="contact-left">
         <h3>Let’s build something great together.</h3>
         <p class="contact-sub">
@@ -424,7 +414,6 @@
         </div>
       </div>
 
-      <!-- CONTACT RIGHT (FORM) -->
       <div class="contact-form card">
         <form id="contact-form">
 
@@ -455,16 +444,18 @@
     <p>© 2025 Innobi — Data Engineering · BI · Cloud Architecture</p>
   </footer>
 
+
+  <!-- ========================= -->
+  <!--          SCRIPT           -->
+  <!-- ========================= -->
   <script>
-    // Theme toggle functionality
+    // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('dark-icon');
     const lightIcon = document.getElementById('light-icon');
     
-    // Check for saved theme or default to dark
     const currentTheme = localStorage.getItem('theme') || 'dark';
-    
-    // Apply saved theme
+
     if (currentTheme === 'dark') {
       document.body.classList.remove('light-theme');
       darkIcon.classList.remove('hidden');
@@ -474,11 +465,10 @@
       darkIcon.classList.add('hidden');
       lightIcon.classList.remove('hidden');
     }
-    
-    // Toggle theme
+
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('light-theme');
-      
+
       if (document.body.classList.contains('light-theme')) {
         localStorage.setItem('theme', 'light');
         darkIcon.classList.add('hidden');
@@ -490,7 +480,7 @@
       }
     });
 
-    // Contact form mailto handler (no external DB)
+    // Contact form mailto handler
     const contactForm = document.getElementById('contact-form');
     const contactStatus = document.getElementById('contact-status');
 
@@ -517,5 +507,6 @@
       contactStatus.classList.remove('error');
     });
   </script>
+
 </body>
 </html>
