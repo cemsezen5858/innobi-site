@@ -437,11 +437,28 @@
   <!--          SCRIPT           -->
   <!-- ========================= -->
   <script>
+    // Navbar hide on scroll for mobile
+    const navbar = document.querySelector('.navbar');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      if (window.innerWidth <= 620) {
+        if (window.scrollY > lastScrollY) {
+          // Scrolling down
+          navbar.style.transform = 'translateY(-100%)';
+        } else {
+          // Scrolling up
+          navbar.style.transform = 'translateY(0)';
+        }
+      }
+      lastScrollY = window.scrollY;
+    });
+
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('dark-icon');
     const lightIcon = document.getElementById('light-icon');
-    
+
     const currentTheme = localStorage.getItem('theme') || 'dark';
 
     if (currentTheme === 'dark') {
