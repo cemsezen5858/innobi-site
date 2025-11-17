@@ -16,6 +16,89 @@ body {
 }
 
 /* =======================================================
+   LIGHT THEME
+======================================================= */
+body.light-theme {
+  background: #FFFFFF;
+  color: #111827;
+}
+
+body.light-theme .bg-layers {
+  display: none;
+}
+
+body.light-theme .navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+body.light-theme .nav-menu a,
+body.light-theme .dropdown-btn,
+body.light-theme .theme-toggle-btn {
+  background: rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 0 14px rgba(0,0,0,0.1);
+  color: #374151;
+}
+
+body.light-theme .nav-menu a:hover,
+body.light-theme .dropdown:hover .dropdown-btn,
+body.light-theme .theme-toggle-btn:hover {
+  color: #111827;
+  box-shadow: 0 0 28px rgba(94,181,249,0.3);
+}
+
+body.light-theme .dropdown-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+body.light-theme .dropdown-panel a {
+  color: #374151;
+}
+
+body.light-theme .dropdown-panel a:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+body.light-theme .hero-text h1 {
+  color: #111827;
+}
+
+body.light-theme .hero-sub {
+  color: #6b7280;
+}
+
+body.light-theme .card {
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  color: #374151;
+}
+
+body.light-theme .about-card p,
+body.light-theme .journey-list p,
+body.light-theme .expertise-card ul,
+body.light-theme .achievements-list,
+body.light-theme .contact-sub {
+  color: #6b7280;
+}
+
+body.light-theme .btn-secondary {
+  color: #1f2937;
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+body.light-theme .section-header p {
+  color: #6b7280;
+}
+
+body.light-theme .footer {
+  color: #6b7280;
+}
+
+/* =======================================================
    CONTAINERS
 ======================================================= */
 .container {
@@ -131,6 +214,9 @@ body {
   backdrop-filter: blur(12px);
   transition: all 0.28s ease;
   box-shadow: 0 0 14px rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-menu a:hover {
@@ -149,6 +235,9 @@ body {
   font-weight: 600;
   box-shadow: 0 0 14px rgba(94,181,249,0.5);
   transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-cta:hover {
@@ -188,6 +277,69 @@ body {
 
 .hidden { display: none; }
 
+/* dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  cursor: pointer;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  backdrop-filter: blur(12px);
+  transition: all 0.28s ease;
+  box-shadow: 0 0 14px rgba(0,0,0,0.35);
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dropdown-btn:hover, .dropdown:hover .dropdown-btn {
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 28px rgba(94,181,249,0.55);
+}
+
+.dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(10, 15, 29, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  z-index: 100;
+  min-width: 200px;
+}
+
+.dropdown:hover .dropdown-panel {
+  display: block;
+}
+
+.dropdown-panel a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+  transition: background 0.2s ease;
+}
+
+.dropdown-panel a:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.dropdown-panel a:last-child {
+  border-bottom: none;
+}
+
 /* =======================================================
    HERO SECTION
 ======================================================= */
@@ -205,7 +357,7 @@ body {
 }
 
 .hero-text h1 {
-  font-size: clamp(1.95rem, 2.2vw + 1.2rem, 2.3rem);
+  font-size: clamp(1.5rem, 1.8vw + 1rem, 1.9rem);
   color: #fff;
   margin-bottom: 1.4rem;
   line-height: 1.2;
@@ -496,12 +648,15 @@ body {
   margin-bottom: 0.7rem;
 }
 
-.expertise-card ul {
-  list-style: disc;
-  padding-left: 1.2rem;
-  color: #bfc3d0;
-  display: grid;
-  gap: 0.5rem;
+.areas-content h4 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #dbeafe;
+}
+
+.areas-content p {
+  color: #b7bcc9;
+  margin-bottom: 0.5rem;
 }
 
 .expertise-grid {
@@ -717,5 +872,41 @@ body {
   }
   .btn-primary {
     width: 100%;
+  }
+
+  /* navbar responsive */
+  .navbar {
+    height: auto;
+    min-height: 78px;
+    padding: 1rem 0;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .dropdown-panel {
+    position: static;
+    display: block;
+    margin-top: 0.5rem;
+    box-shadow: none;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .dropdown:hover .dropdown-panel {
+    display: block;
   }
 }
