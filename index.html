@@ -43,7 +43,11 @@
         <div class="dropdown">
           <a class="dropdown-btn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <path d="M14.5 2L20 7.5V8H14.5z"/>
+              <path d="M16 13H8"/>
+              <path d="M16 17H8"/>
+              <path d="M10 9H8"/>
             </svg>
             Projects ▾
           </a>
@@ -300,7 +304,8 @@
       <p>Selected Work & Live BI Platforms</p>
     </div>
 
-    <div class="projects-popup">
+    <div class="container card">
+      <div class="projects-popup">
 
       <div class="popup-card">
         <h3>1 — US Trade Tariff Impact Analysis</h3>
@@ -351,6 +356,7 @@
         </div>
       </div>
 
+    </div>
     </div>
 
   </section>
@@ -440,12 +446,12 @@
 
     if (currentTheme === 'dark') {
       document.body.classList.remove('light-theme');
-      darkIcon.classList.remove('hidden');
-      lightIcon.classList.add('hidden');
-    } else {
-      document.body.classList.add('light-theme');
       darkIcon.classList.add('hidden');
       lightIcon.classList.remove('hidden');
+    } else {
+      document.body.classList.add('light-theme');
+      darkIcon.classList.remove('hidden');
+      lightIcon.classList.add('hidden');
     }
 
     themeToggle.addEventListener('click', () => {
@@ -453,12 +459,12 @@
 
       if (document.body.classList.contains('light-theme')) {
         localStorage.setItem('theme', 'light');
-        darkIcon.classList.add('hidden');
-        lightIcon.classList.remove('hidden');
-      } else {
-        localStorage.setItem('theme', 'dark');
         darkIcon.classList.remove('hidden');
         lightIcon.classList.add('hidden');
+      } else {
+        localStorage.setItem('theme', 'dark');
+        darkIcon.classList.add('hidden');
+        lightIcon.classList.remove('hidden');
       }
     });
 
