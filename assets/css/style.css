@@ -119,23 +119,6 @@ body {
   flex-wrap: wrap;
 }
 
-.nav-cta {
-  text-decoration: none;
-  color: #0a0f1d;
-  background: linear-gradient(120deg, #60a5fa, #a78bfa);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 0.55rem 0.95rem;
-  font-weight: 600;
-  box-shadow: 0 0 14px rgba(94,181,249,0.5);
-  transition: all 0.25s ease;
-}
-
-.nav-cta:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 0 26px rgba(94,181,249,0.65);
-}
-
 .nav-menu a {
   text-decoration: none;
   color: #cbd5e1;
@@ -156,7 +139,24 @@ body {
   box-shadow: 0 0 28px rgba(94,181,249,0.55);
 }
 
-/* Theme Toggle Button */
+.nav-cta {
+  text-decoration: none;
+  color: #0a0f1d;
+  background: linear-gradient(120deg, #60a5fa, #a78bfa);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 0.55rem 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 0 14px rgba(94,181,249,0.5);
+  transition: all 0.25s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 26px rgba(94,181,249,0.65);
+}
+
+/* toggler */
 .theme-toggle-btn {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.06);
@@ -186,64 +186,7 @@ body {
   color: #fff;
 }
 
-.hidden {
-  display: none;
-}
-
-/* dropdown */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-btn {
-  color: #cbd5e1;
-  cursor: pointer;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 0.5rem 1rem;
-  backdrop-filter: blur(12px);
-  transition: all 0.28s ease;
-  box-shadow: 0 0 14px rgba(0,0,0,0.35);
-}
-
-.dropdown-btn:hover {
-  color: #fff;
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 0 28px rgba(94,181,249,0.55);
-}
-
-.dropdown-panel {
-  position: absolute;
-  top: 140%;
-  left: 0;
-  width: 320px;
-  background: rgba(17, 25, 40, 0.82);
-  padding: 1rem;
-  display: none;
-  flex-direction: column;
-  gap: 0.4rem;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(18px);
-}
-
-.dropdown:hover .dropdown-panel {
-  display: flex;
-}
-
-.dropdown-panel a {
-  padding: 0.55rem 0.75rem;
-  border-radius: 10px;
-  color: #b8bcd1;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.dropdown-panel a:hover {
-  background: rgba(255,255,255,0.06);
-  color: #fff;
-}
+.hidden { display: none; }
 
 /* =======================================================
    HERO SECTION
@@ -251,7 +194,7 @@ body {
 .hero {
   padding-top: 5rem;
   padding-bottom: 7rem;
-  position: relative;  /* Cloud’un konumu bu içeriğe bağlı olsun diye */
+  position: relative;
 }
 
 .hero-grid {
@@ -294,7 +237,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* HERO PHOTO AREA */
+/* hero photo */
 .hero-photo-wrap {
   position: relative;
   width: 100%;
@@ -310,7 +253,6 @@ body {
   box-shadow: 0 0 25px rgba(94,181,249,0.47);
 }
 
-/* outer neon halo */
 .hero-photo-glow {
   position: absolute;
   inset: -20px;
@@ -326,12 +268,12 @@ body {
 /* cloud overlay */
 .hero-cloud {
   position: absolute;
-  width: 520px;              /* cloud boyutu daha küçük */
-  top: 18%;                  /* biraz aşağı */
-  right: 5%;                 /* sağ tarafa al */
-  opacity: 0.25;             /* daha soft glow */
-  filter: blur(8px);         /* glow effect */
-  z-index: 1;                /* foto Glow’un ALTINDA */
+  width: 520px;
+  top: 18%;
+  right: 5%;
+  opacity: 0.25;
+  filter: blur(8px);
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -356,13 +298,11 @@ body {
 .about-card h3 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  letter-spacing: 0.02em;
 }
 
 .about-card p {
   margin-bottom: 1rem;
   color: #b7bcc9;
-  font-size: 1rem;
 }
 
 .about-links {
@@ -391,6 +331,9 @@ body {
   box-shadow: 0 0 18px rgba(94,181,249,0.35);
 }
 
+/* =======================================================
+   PROFESSIONAL JOURNEY
+======================================================= */
 .journey-card {
   grid-column: span 2;
 }
@@ -409,7 +352,6 @@ body {
   color: #0b1020;
   font-weight: 700;
   font-size: 0.85rem;
-  letter-spacing: 0.02em;
 }
 
 .journey-list {
@@ -421,7 +363,6 @@ body {
 .journey-role {
   font-weight: 700;
   margin-bottom: 0.2rem;
-  letter-spacing: 0.01em;
 }
 
 .journey-meta {
@@ -434,6 +375,10 @@ body {
   margin: 0;
   color: #b7bcc9;
 }
+
+/* =======================================================
+   CORE SKILLS (WITH ICONS)
+======================================================= */
 
 .skills-card {
   grid-column: span 2;
@@ -500,11 +445,6 @@ body {
   border-radius: inherit;
   box-shadow: 0 0 18px rgba(94,181,249,0.45);
 }
-
-
-/* =======================================================
-   PART 1 / 2 SONU
-======================================================= */
 /* =======================================================
    SKILLS GRID
 ======================================================= */
@@ -536,7 +476,6 @@ body {
   margin-bottom: 0;
   filter: drop-shadow(0 0 6px rgba(94,181,249,0.4));
   object-fit: contain;
-  background-color: transparent;
 }
 
 .skill-box span {
@@ -545,7 +484,6 @@ body {
   font-size: 1rem;
   color: #e5e7eb;
 }
-
 
 /* =======================================================
    EXPERTISE
@@ -572,7 +510,6 @@ body {
   gap: 1.5rem;
 }
 
-
 /* =======================================================
    ACHIEVEMENTS
 ======================================================= */
@@ -585,7 +522,6 @@ body {
 .achievements-list li {
   margin-bottom: 1rem;
 }
-
 
 /* =======================================================
    PROJECTS POPUP (PREMIUM)
@@ -641,7 +577,6 @@ body {
   box-shadow: 0 0 12px rgba(0,0,0,0.35);
 }
 
-/* Tag Colors */
 .tag.cyan { background: linear-gradient(90deg, #22d3ee, #0ea5e9); }
 .tag.purple { background: linear-gradient(90deg, #a855f7, #7c3aed); }
 .tag.blue { background: linear-gradient(90deg, #3b82f6, #2563eb); }
@@ -651,9 +586,8 @@ body {
 .tag.violet { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
 .tag.red { background: linear-gradient(90deg, #f87171, #ef4444); }
 
-
 /* =======================================================
-   CONTACT FORM (PREMIUM GLASS)
+   CONTACT FORM (GLASS)
 ======================================================= */
 .contact-grid {
   display: grid;
@@ -757,169 +691,7 @@ body {
 }
 
 /* =======================================================
-   LIGHT THEME STYLES
-======================================================= */
-body.light-theme {
-  background: #f0f4f8;
-  color: #334155;
-}
-
-/* Light theme navbar */
-body.light-theme .navbar {
-  background: rgba(255, 255, 255, 0.75);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-body.light-theme .logo {
-  color: #0ea5e9;
-}
-
-body.light-theme .nav-menu a,
-body.light-theme .dropdown-btn,
-body.light-theme .theme-toggle-btn {
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  color: #334155;
-  box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
-}
-
-body.light-theme .nav-menu a:hover,
-body.light-theme .dropdown-btn:hover,
-body.light-theme .theme-toggle-btn:hover {
-  color: #0f172a;
-  box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
-}
-
-body.light-theme .dropdown-panel {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-body.light-theme .dropdown-panel a {
-  color: #475569;
-}
-
-body.light-theme .dropdown-panel a:hover {
-  background: rgba(0, 0, 0, 0.06);
-  color: #0f172a;
-}
-
-/* Light theme hero */
-body.light-theme .hero-text h1 {
-  color: #0f172a;
-}
-
-body.light-theme .hero-sub {
-  color: #64748b;
-}
-
-body.light-theme .btn-primary {
-  color: #f0f4f8;
-  box-shadow: 0 0 18px rgba(14, 165, 233, 0.45);
-}
-
-body.light-theme .btn-primary:hover {
-  box-shadow: 0 0 28px rgba(14, 165, 233, 0.75);
-}
-
-/* Light theme cards */
-body.light-theme .card,
-body.light-theme .skill-box {
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-body.light-theme .skill-box:hover {
-  box-shadow: 0 0 28px rgba(14, 165, 233, 0.4);
-}
-
-body.light-theme .about-card h3,
-body.light-theme .skill-box span {
-  color: #0f172a;
-}
-
-body.light-theme .about-card p,
-body.light-theme .achievements-list,
-body.light-theme .expertise-card ul {
-  color: #475569;
-}
-
-/* Light theme section headers */
-body.light-theme .section-header h2 {
-  color: #0f172a;
-}
-
-body.light-theme .section-header p {
-  color: #64748b;
-}
-
-/* Light theme popup cards */
-body.light-theme .popup-card {
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-}
-
-body.light-theme .popup-card:hover {
-  box-shadow: 0 0 35px rgba(14, 165, 233, 0.4);
-}
-
-body.light-theme .popup-card h3 {
-  color: #0f172a;
-}
-
-body.light-theme .popup-desc {
-  color: #475569;
-}
-
-/* Light theme contact form */
-body.light-theme .contact-form {
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-body.light-theme .contact-form input,
-body.light-theme .contact-form textarea {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  color: #0f172a;
-}
-
-body.light-theme .contact-form label {
-  color: #334155;
-}
-
-body.light-theme .contact-left h3 {
-  color: #0f172a;
-}
-
-body.light-theme .contact-sub {
-  color: #475569;
-}
-
-body.light-theme .footer {
-  color: #94a3b8;
-}
-
-/* Light theme background layers */
-body.light-theme .bg-gradient {
-  background: radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.15), transparent 60%),
-              radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12), transparent 60%);
-}
-
-body.light-theme .bg-grid {
-  background-image:
-     linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
-     linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
-}
-
-body.light-theme .bg-dots {
-  background: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
-}
-
-/* =======================================================
-   RESPONSIVE (TABLET & MOBILE)
+   RESPONSIVE
 ======================================================= */
 @media (max-width: 1020px) {
   .hero-grid {
