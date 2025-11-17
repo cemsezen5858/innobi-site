@@ -208,6 +208,7 @@ body.light-theme .theme-toggle-btn .theme-icon {
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   z-index: 99;
+  transition: transform 0.3s ease-in-out;
 }
 
 .nav-inner {
