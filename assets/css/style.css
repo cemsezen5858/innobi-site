@@ -98,6 +98,41 @@ body.light-theme .footer {
   color: #6b7280;
 }
 
+body.light-theme .areas-content h4 {
+  color: #1f2937;
+}
+
+body.light-theme .areas-content p {
+  color: #374151;
+}
+
+body.light-theme .contact-pill {
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #1f2937;
+}
+
+body.light-theme .contact-pill:hover {
+  border-color: rgba(94,181,249,0.7);
+  box-shadow: 0 0 18px rgba(94,181,249,0.35);
+}
+
+body.light-theme .contact-form input,
+body.light-theme .contact-form textarea {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.15);
+  color: #111827;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+body.light-theme .contact-form label {
+  color: #374151;
+}
+
+body.light-theme .theme-toggle-btn .theme-icon {
+  color: #1f2937;
+}
+
 /* =======================================================
    CONTAINERS
 ======================================================= */
@@ -460,7 +495,7 @@ body.light-theme .footer {
 .about-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
@@ -475,6 +510,7 @@ body.light-theme .footer {
   color: #dbeafe;
   background: rgba(255,255,255,0.06);
   transition: all 0.25s ease;
+  gap: 0.6rem;
 }
 
 .btn-secondary:hover {
