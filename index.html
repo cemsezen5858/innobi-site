@@ -437,6 +437,23 @@
   <!--          SCRIPT           -->
   <!-- ========================= -->
   <script>
+    // Mobile dropdown toggle
+    if (window.innerWidth <= 620) {
+      const dropdownBtn = document.querySelector('.dropdown-btn');
+      const dropdownPanel = document.querySelector('.dropdown-panel');
+
+      dropdownBtn.addEventListener('click', () => {
+        if (dropdownPanel.style.display === 'block') {
+          dropdownPanel.style.display = 'none';
+        } else {
+          dropdownPanel.style.display = 'block';
+        }
+      });
+
+      // Initially hidden
+      dropdownPanel.style.display = 'none';
+    }
+
     // Navbar hide on scroll for mobile
     const navbar = document.querySelector('.navbar');
     let lastScrollY = window.scrollY;
