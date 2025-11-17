@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Innobi | Data Engineering & BI by Salih Sezen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ========================= -->
+  <!--   GLOBAL BACKGROUND GRID  -->
+  <!-- ========================= -->
+  <div class="bg-layers">
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-dots"></div>
+  </div>
+
+  <!-- ========================= -->
+  <!--          NAVBAR           -->
+  <!-- ========================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">INNOBI</div>
+
+      <nav class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+
+        <div class="dropdown">
+          <a class="dropdown-btn">Projects ▾</a>
+          <div class="dropdown-panel">
+            <a href="#proj1">1 — US Trade Tariff Impact Analysis</a>
+            <a href="#proj2">2 — Sales Decision Maker</a>
+            <a href="#proj3">3 — Project & Logistic Control System</a>
+            <a href="#proj4">4 — Forecast & Anomaly Detector</a>
+          </div>
+        </div>
+
+        <a href="#contact">Contact</a>
+        
+        <!-- Dark/Light Mode Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg class="theme-icon" id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="theme-icon hidden" id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ========================= -->
+  <!--           HERO            -->
+  <!-- ========================= -->
+  <section id="home" class="section hero">
+    <div class="container hero-grid">
+
+      <!-- LEFT TEXT -->
+      <div class="hero-text">
+        <h1>
+          Transforming Data Into Intelligence —<br>
+          From Raw Files to Production-Grade Analytics
+        </h1>
+
+        <p class="hero-sub">
+          I design and build modern data platforms, cloud-based DWH architectures, and high-impact BI solutions
+          that turn complex datasets into clear, actionable insights.
+        </p>
+
+        <p class="hero-sub">
+          My work blends Data Engineering, Cloud Architecture, and Analytics to deliver scalable, reliable,
+          end-to-end outcomes.
+        </p>
+
+        <a href="#projects" class="btn-primary">View Projects</a>
+      </div>
+
+      <!-- RIGHT PHOTO -->
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-glow"></div>
+        <img src="assets/img/salih.png" class="hero-photo" alt="Salih Sezen">
+        
+      </div>
+      <img src="assets/img/hero-cloud.png" class="hero-cloud" alt="Neon Cloud">
+    </div>
+  </section>
+
+
+  <!-- ========================= -->
+  <!--          ABOUT            -->
+  <!-- ========================= -->
+  <section id="about" class="section about">
+    <div class="container section-header">
+      <h2>About</h2>
+      <p>Innobi & Salih Sezen</p>
+    </div>
+
+    <div class="container about-grid">
+
+      <!-- ABOUT SALIH -->
+      <div class="card about-card">
+        <h3>About Salih</h3>
+        <p>
+          I am a Data Engineer and Senior BI/DWH Developer with 10+ years of experience building analytics platforms for
+          real-world business problems. I specialize in AWS-based architectures, dimensional modeling, Python automations,
+          and high-performance data pipelines.
+        </p>
+        <p>
+          My recent work includes a full, production-grade U.S. Trade & Tariff Analysis platform built on S3, Glue,
+          Redshift, and Power BI.
+        </p>
+        <p>
+          I deliver end-to-end solutions — from ingestion to dashboards — with strong ownership and deep engineering focus.
+        </p>
+      </div>
+
+      <!-- ABOUT INNOBI -->
+      <div class="card about-card">
+        <h3>About Innobi</h3>
+        <p>
+          Innobi is a boutique data & analytics studio focused on building modern, scalable cloud data platforms for
+          companies that want real insights — not just reports.
+        </p>
+        <p>
+          We design and deliver end-to-end data pipelines, DWH architectures, automation frameworks, and BI dashboards.
+        </p>
+        <p>
+          Our approach blends engineering precision with business understanding to create analytics systems that actually
+          drive decision-making.
+        </p>
+      </div>
+
+    </div>
+  </section>
+  <!-- ========================= -->
+  <!--    CORE TECHNICAL SKILLS  -->
+  <!-- ========================= -->
+  <section id="skills" class="section">
+    <div class="container section-header">
+      <h2>Core Technical Skills</h2>
+      <p>Engineering foundations for modern data platforms</p>
+    </div>
+
+    <div class="container card core-skills-card">
+      <ul class="core-skills-list">
+        <li>Cloud Data Warehousing</li>
+        <li>ETL / ELT Pipeline Architecture</li>
+        <li>Dimensional Modelling</li>
+        <li>Data Governance & Security</li>
+        <li>Performance Optimization</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ========================= -->
+  <!--    MORE TECHNICAL SKILLS  -->
+  <!-- ========================= -->
+  <section class="section">
+    <div class="container section-header">
+      <h2>More Technical Skills</h2>
+      <p>Technologies used across projects</p>
+    </div>
+
+    <div class="container skills-grid">
+
+      <!-- AWS -->
+      <div class="skill-box">
+        <span>AWS</span>
+        <img src="assets/icons/aws.png" class="skill-icon" alt="AWS">
+      </div>
+
+      <!-- PYTHON -->
+      <div class="skill-box">
+        <span>Python</span>
+        <img src="https://cdn.simpleicons.org/python/3776AB" class="skill-icon" alt="Python">
+      </div>
+
+      <!-- SQL -->
+      <div class="skill-box">
+        <span>SQL</span>
+        <img src="https://cdn.simpleicons.org/mysql/4479A1" class="skill-icon" alt="SQL">
+      </div>
+
+      <!-- REDSHIFT -->
+      <div class="skill-box">
+        <span>Redshift</span>
+        <img src="assets/icons/redshift.png" class="skill-icon" alt="Redshift">
+      </div>
+
+      <!-- POWER BI -->
+      <div class="skill-box">
+        <span>Power BI</span>
+        <img src="assets/icons/powerbi.png" class="skill-icon" alt="Power BI">
+      </div>
+
+      <!-- AZURE -->
+      <div class="skill-box">
+        <span>Azure</span>
+        <img src="https://cdn.worldvectorlogo.com/logos/azure-1.svg" class="skill-icon" alt="Azure">
+      </div>
+
+      <!-- GIT -->
+      <div class="skill-box">
+        <span>Git</span>
+        <img src="https://cdn.simpleicons.org/git/F05032" class="skill-icon" alt="Git">
+      </div>
+
+      <!-- SSIS / ETL CUSTOM (glow will be added by CSS) -->
+      <div class="skill-box">
+        <span>ETL / SSIS</span>
+        <img src="https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg" class="skill-icon" alt="ETL">
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================= -->
+  <!--     AREAS OF EXPERTISE    -->
+  <!-- ========================= -->
+  <section id="expertise" class="section">
+    <div class="container section-header">
+      <h2>Areas of Expertise</h2>
+      <p>Core focus areas in engineering and analytics</p>
+    </div>
+
+    <div class="container card expertise-card">
+      <ul class="expertise-list">
+        <li><span class="exp-dot"></span> Cloud Data Trade & Automation</li>
+        <li><span class="exp-dot"></span> Dimensional Intelligence Solutions</li>
+        <li><span class="exp-dot"></span> Performance Analytics</li>
+        <li><span class="exp-dot"></span> Modern BI & Visualization</li>
+        <li><span class="exp-dot"></span> Data Security</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ========================= -->
+  <!--      KEY ACHIEVEMENTS     -->
+  <!-- ========================= -->
+  <section id="achievements" class="section">
+    <div class="container section-header">
+      <h2>Key Achievements</h2>
+      <p>Track record & major accomplishments</p>
+    </div>
+
+    <div class="container card achievements-card">
+      <ul class="achievements-list">
+        <li>Built full AWS-based U.S. Trade & Tariff analytics platform</li>
+        <li>Delivered end-to-end BI systems across multiple industries</li>
+        <li>Designed high-performance data warehouses for enterprise workloads</li>
+        <li>Strong ownership and clean engineering principles</li>
+        <li>Automation frameworks for large Excel-based datasets (Python + Glue)</li>
+      </ul>
+    </div>
+  </section>
+  <!-- ========================= -->
+  <!--      PROJECTS POPUP       -->
+  <!-- ========================= -->
+  <section id="projects" class="section">
+    <div class="container section-header">
+      <h2>Projects</h2>
+      <p>Selected Work & Live BI Platforms</p>
+    </div>
+
+    <!-- PROJECTS POPUP -->
+    <div class="projects-popup">
+
+      <div class="popup-card">
+        <h3>1 — US Trade Tariff Impact Analysis</h3>
+        <p class="popup-desc">
+          A production-grade AWS analytics platform to analyze U.S. trade flows and tariff exposure.
+        </p>
+
+        <div class="tags">
+          <span class="tag cyan">Data Engineering</span>
+          <span class="tag purple">DWH</span>
+          <span class="tag blue">BI</span>
+          <span class="tag orange">ETL</span>
+        </div>
+      </div>
+
+      <div class="popup-card">
+        <h3>2 — Sales Decision Maker</h3>
+        <p class="popup-desc">
+          Dimensional-model-driven BI environment for sales performance optimization.
+        </p>
+
+        <div class="tags">
+          <span class="tag purple">DWH</span>
+          <span class="tag blue">BI</span>
+          <span class="tag orange">ETL</span>
+        </div>
+      </div>
+
+      <div class="popup-card">
+        <h3>3 — Project & Logistic Control System</h3>
+        <p class="popup-desc">
+          Full-stack project & logistics control platform with reporting layer.
+        </p>
+
+        <div class="tags">
+          <span class="tag teal">Software Dev</span>
+          <span class="tag green">Architecture</span>
+          <span class="tag blue">Web Coding</span>
+        </div>
+      </div>
+
+      <div class="popup-card">
+        <h3>4 — Forecast & Anomaly Detector</h3>
+        <p class="popup-desc">
+          A machine learning model to forecast patterns and detect anomalies.
+        </p>
+
+        <div class="tags">
+          <span class="tag violet">AI</span>
+          <span class="tag green">Machine Learning</span>
+          <span class="tag red">DBA</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================= -->
+  <!--         CONTACT           -->
+  <!-- ========================= -->
+  <section id="contact" class="section contact">
+    <div class="container section-header">
+      <h2>Contact</h2>
+      <p>Let’s build something great together</p>
+    </div>
+
+    <div class="container contact-grid">
+
+      <!-- CONTACT LEFT -->
+      <div class="contact-left">
+        <h3>Let’s build something great together.</h3>
+        <p class="contact-sub">
+          Whether you need a BI system, a modern data platform, an ETL pipeline, 
+          or a production-grade analytics environment — let’s connect.
+        </p>
+      </div>
+
+      <!-- CONTACT RIGHT (FORM) -->
+      <div class="contact-form card">
+        <form>
+
+          <label>Name</label>
+          <input type="text" placeholder="Your name">
+
+          <label>Email</label>
+          <input type="email" placeholder="Your email">
+
+          <label>Message</label>
+          <textarea placeholder="Write your message here"></textarea>
+
+          <button class="btn-primary submit-btn">Send Message</button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================= -->
+  <!--          FOOTER           -->
+  <!-- ========================= -->
+  <footer class="footer">
+    <p>© 2025 Innobi — Data Engineering · BI · Cloud Architecture</p>
+  </footer>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('dark-icon');
+    const lightIcon = document.getElementById('light-icon');
+    
+    // Check for saved theme or default to dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    
+    // Apply saved theme
+    if (currentTheme === 'dark') {
+      document.body.classList.remove('light-theme');
+      darkIcon.classList.remove('hidden');
+      lightIcon.classList.add('hidden');
+    } else {
+      document.body.classList.add('light-theme');
+      darkIcon.classList.add('hidden');
+      lightIcon.classList.remove('hidden');
+    }
+    
+    // Toggle theme
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+      
+      if (document.body.classList.contains('light-theme')) {
+        localStorage.setItem('theme', 'light');
+        darkIcon.classList.add('hidden');
+        lightIcon.classList.remove('hidden');
+      } else {
+        localStorage.setItem('theme', 'dark');
+        darkIcon.classList.remove('hidden');
+        lightIcon.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
