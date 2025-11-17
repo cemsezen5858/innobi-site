@@ -41,24 +41,29 @@
         </div>
 
         <a href="#contact">Contact</a>
-        
-        <!-- Dark/Light Mode Toggle Button -->
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-          <svg class="theme-icon" id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-          <svg class="theme-icon hidden" id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
+
+        <div class="nav-actions">
+          <a class="nav-cta" href="https://www.linkedin.com/in/salihsezen/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="nav-cta" href="https://github.com/salihsezen" target="_blank" rel="noreferrer">GitHub</a>
+
+          <!-- Dark/Light Mode Toggle Button -->
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="theme-icon" id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="theme-icon hidden" id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
@@ -107,147 +112,191 @@
   <section id="about" class="section about">
     <div class="container section-header">
       <h2>About</h2>
-      <p>Innobi & Salih Sezen</p>
+      <p>Innobi · Salih Sezen</p>
     </div>
 
     <div class="container about-grid">
 
-      <!-- ABOUT SALIH -->
+      <!-- ABOUT + CTA -->
       <div class="card about-card">
-        <h3>About Salih</h3>
+        <h3>About Me · Innobi</h3>
         <p>
-          I am a Data Engineer and Senior BI/DWH Developer with 10+ years of experience building analytics platforms for
-          real-world business problems. I specialize in AWS-based architectures, dimensional modeling, Python automations,
-          and high-performance data pipelines.
+          I’m Salih Sezen, a Data Engineer and Senior DWH/BI Developer who architects analytics platforms from raw files to
+          production-grade dashboards. Through Innobi, I design cloud-native data foundations that keep scale, quality, and
+          business clarity in balance.
         </p>
         <p>
-          My recent work includes a full, production-grade U.S. Trade & Tariff Analysis platform built on S3, Glue,
-          Redshift, and Power BI.
+          From multi-layered AWS data lakes to dimensional models and modern BI layers, I build systems that withstand real
+          enterprise demands—telecom, finance, e-commerce, and trade analytics included.
         </p>
-        <p>
-          I deliver end-to-end solutions — from ingestion to dashboards — with strong ownership and deep engineering focus.
-        </p>
+        <div class="about-links">
+          <a class="btn-secondary" href="https://www.linkedin.com/in/salihsezen/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn-secondary" href="https://github.com/salihsezen" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
       </div>
 
-      <!-- ABOUT INNOBI -->
-      <div class="card about-card">
-        <h3>About Innobi</h3>
-        <p>
-          Innobi is a boutique data & analytics studio focused on building modern, scalable cloud data platforms for
-          companies that want real insights — not just reports.
-        </p>
-        <p>
-          We design and deliver end-to-end data pipelines, DWH architectures, automation frameworks, and BI dashboards.
-        </p>
-        <p>
-          Our approach blends engineering precision with business understanding to create analytics systems that actually
-          drive decision-making.
-        </p>
+      <!-- PROFESSIONAL JOURNEY -->
+      <div class="card about-card journey-card">
+        <div class="journey-header">
+          <h3>Professional Journey</h3>
+          <span class="badge">10+ yrs</span>
+        </div>
+        <ul class="journey-list">
+          <li>
+            <div class="journey-role">Data Engineer · Senior DWH / BI Developer</div>
+            <div class="journey-meta">Self-Employed — 2025 · AWS, Python, PySpark, Redshift</div>
+            <p>Built end-to-end AWS lakehouse pipelines (S3 → Glue → Redshift), dimensional models, and analytics-ready
+              marts powering U.S. trade & tariff intelligence and forecasting experiments.</p>
+          </li>
+          <li>
+            <div class="journey-role">Senior Business Intelligence Developer</div>
+            <div class="journey-meta">Eurofase Lighting — 2024–2025 · Power BI, SSIS, Azure</div>
+            <p>Delivered executive dashboards, anomaly alerts, and D365-integrated data warehouses translating complex
+              requirements into tested, production-ready BI assets.</p>
+          </li>
+          <li>
+            <div class="journey-role">Senior DB & BI Developer</div>
+            <div class="journey-meta">Vodafone (via Electra Telecom) — 2015–2023 · SQL Server, SSIS, Qlik</div>
+            <p>Unified 150+ telecom data sources into real-time KPI and alerting systems, scaling to 10TB with automated
+              jobs, drill-down dashboards, and geo-spatial analytics.</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CORE TECHNICAL SKILLS WITH RATINGS -->
+      <div class="card about-card skills-card">
+        <div class="journey-header">
+          <h3>Core Technical Skills</h3>
+          <span class="badge">Depth</span>
+        </div>
+        <ul class="skill-ratings">
+          <li>
+            <div class="skill-top">
+              <span class="skill-icon-wrap"><img src="assets/icons/aws.png" alt="AWS"></span>
+              <span class="skill-label">AWS S3 · Glue · Athena · Lambda · Redshift</span>
+              <span class="score">7.5 / 10</span>
+            </div>
+            <div class="skill-bar" style="--level:75%"></div>
+          </li>
+          <li>
+            <div class="skill-top">
+              <span class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python"></span>
+              <span class="skill-label">Python ETL (pandas, boto3, pyarrow) · PySpark</span>
+              <span class="score">7.5 / 10</span>
+            </div>
+            <div class="skill-bar" style="--level:75%"></div>
+          </li>
+          <li>
+            <div class="skill-top">
+              <span class="skill-icon-wrap"><img src="assets/icons/redshift.png" alt="Data pipeline"></span>
+              <span class="skill-label">Cloud-Native Data Pipelines & Parquet Optimization</span>
+              <span class="score">7.5 / 10</span>
+            </div>
+            <div class="skill-bar" style="--level:75%"></div>
+          </li>
+          <li>
+            <div class="skill-top">
+              <span class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/awsorganizations/FACC15" alt="IAM"></span>
+              <span class="skill-label">IAM, CloudWatch, EventBridge, VPC basics</span>
+              <span class="score">7.5 / 10</span>
+            </div>
+            <div class="skill-bar" style="--level:75%"></div>
+          </li>
+          <li>
+            <div class="skill-top">
+              <span class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/mysql/38bdf8" alt="SQL"></span>
+              <span class="skill-label">Advanced SQL · PostgreSQL · SQL Server · Oracle · Snowflake</span>
+              <span class="score">9.5 / 10</span>
+            </div>
+            <div class="skill-bar" style="--level:95%"></div>
+          </li>
+          <li>
+            <div class="skill-top">
+              <span class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/apacheairflow/64748b" alt="Modelling"></span>
+              <span class="skill-label">Dimensional Modelling · Data Warehousing · Star Schema</span>
+              <span class="score">9.5 / 10</span>
+            </div>
+            <div class="skill-bar" style="--level:95%"></div>
+          </li>
+          <li>
+            <div class="skill-top">
+              <span class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/microsoftsqlserver/ef4444" alt="ETL"></span>
+              <span class="skill-label">ETL / ELT Integration (SSIS, ODI, Python Automation)</span>
+              <span class="score">9.5 / 10</span>
+            </div>
+            <div class="skill-bar" style="--level:95%"></div>
+          </li>
+          <li>
+            <div class="skill-top">
+              <span class="skill-icon-wrap"><img src="assets/icons/powerbi.png" alt="BI"></span>
+              <span class="skill-label">BI: Power BI · SSRS · Qlik Sense · QuickSight · Tableau</span>
+              <span class="score">9.5 / 10</span>
+            </div>
+            <div class="skill-bar" style="--level:95%"></div>
+          </li>
+          <li>
+            <div class="skill-top">
+              <span class="skill-icon-wrap"><img src="https://cdn.simpleicons.org/artificialintelligence/7c3aed" alt="Analytics"></span>
+              <span class="skill-label">Data Integrations · ML Foundations · Ownership Mindset</span>
+              <span class="score">9.5 / 10</span>
+            </div>
+            <div class="skill-bar" style="--level:95%"></div>
+          </li>
+        </ul>
       </div>
 
     </div>
   </section>
-  <!-- ========================= -->
-  <!--    CORE TECHNICAL SKILLS  -->
-  <!-- ========================= -->
-  <section id="skills" class="section">
-    <div class="container section-header">
-      <h2>Core Technical Skills</h2>
-      <p>Engineering foundations for modern data platforms</p>
-    </div>
-
-    <div class="container card core-skills-card">
-      <ul class="core-skills-list">
-        <li>Cloud Data Warehousing</li>
-        <li>ETL / ELT Pipeline Architecture</li>
-        <li>Dimensional Modelling</li>
-        <li>Data Governance & Security</li>
-        <li>Performance Optimization</li>
-      </ul>
-    </div>
-  </section>
-
-
-  <!-- ========================= -->
-  <!--    MORE TECHNICAL SKILLS  -->
-  <!-- ========================= -->
-  <section class="section">
-    <div class="container section-header">
-      <h2>More Technical Skills</h2>
-      <p>Technologies used across projects</p>
-    </div>
-
-    <div class="container skills-grid">
-
-      <!-- AWS -->
-      <div class="skill-box">
-        <span>AWS</span>
-        <img src="assets/icons/aws.png" class="skill-icon" alt="AWS">
-      </div>
-
-      <!-- PYTHON -->
-      <div class="skill-box">
-        <span>Python</span>
-        <img src="https://cdn.simpleicons.org/python/3776AB" class="skill-icon" alt="Python">
-      </div>
-
-      <!-- SQL -->
-      <div class="skill-box">
-        <span>SQL</span>
-        <img src="https://cdn.simpleicons.org/mysql/4479A1" class="skill-icon" alt="SQL">
-      </div>
-
-      <!-- REDSHIFT -->
-      <div class="skill-box">
-        <span>Redshift</span>
-        <img src="assets/icons/redshift.png" class="skill-icon" alt="Redshift">
-      </div>
-
-      <!-- POWER BI -->
-      <div class="skill-box">
-        <span>Power BI</span>
-        <img src="assets/icons/powerbi.png" class="skill-icon" alt="Power BI">
-      </div>
-
-      <!-- AZURE -->
-      <div class="skill-box">
-        <span>Azure</span>
-        <img src="https://cdn.worldvectorlogo.com/logos/azure-1.svg" class="skill-icon" alt="Azure">
-      </div>
-
-      <!-- GIT -->
-      <div class="skill-box">
-        <span>Git</span>
-        <img src="https://cdn.simpleicons.org/git/F05032" class="skill-icon" alt="Git">
-      </div>
-
-      <!-- SSIS / ETL CUSTOM (glow will be added by CSS) -->
-      <div class="skill-box">
-        <span>ETL / SSIS</span>
-        <img src="https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg" class="skill-icon" alt="ETL">
-      </div>
-
-    </div>
-  </section>
-
-
   <!-- ========================= -->
   <!--     AREAS OF EXPERTISE    -->
   <!-- ========================= -->
   <section id="expertise" class="section">
     <div class="container section-header">
       <h2>Areas of Expertise</h2>
-      <p>Core focus areas in engineering and analytics</p>
+      <p>Focused problem-solving domains</p>
     </div>
 
-    <div class="container card expertise-card">
-      <ul class="expertise-list">
-        <li><span class="exp-dot"></span> Cloud Data Trade & Automation</li>
-        <li><span class="exp-dot"></span> Dimensional Intelligence Solutions</li>
-        <li><span class="exp-dot"></span> Performance Analytics</li>
-        <li><span class="exp-dot"></span> Modern BI & Visualization</li>
-        <li><span class="exp-dot"></span> Data Security</li>
-      </ul>
+    <div class="container expertise-grid">
+      <div class="expertise-card card">
+        <h3>Business Intelligence & Analytics</h3>
+        <ul>
+          <li>Power BI, Qlik, SSRS, QuickSight delivery with metric guardrails.</li>
+          <li>Executive-ready dashboards, KPI storytelling, and drill-downs.</li>
+          <li>Anomaly alerting and early-warning indicators for operations.</li>
+          <li>Self-serve semantic layers and governed data products.</li>
+          <li>Telecom, finance, and trade domain reporting at scale.</li>
+        </ul>
+      </div>
+      <div class="expertise-card card">
+        <h3>Data Warehousing & Modelling</h3>
+        <ul>
+          <li>Star schema design with staging, SCD, and partition strategy.</li>
+          <li>Dimensional governance for fact/dim, catalog, and lineage.</li>
+          <li>Performance tuning tailored to BI and analytical workloads.</li>
+          <li>Data quality checkpoints embedded across layers.</li>
+          <li>D365 and multi-source integration into curated marts.</li>
+        </ul>
+      </div>
+      <div class="expertise-card card">
+        <h3>End-to-End Data Integration</h3>
+        <ul>
+          <li>SSIS, ODI, and Python ETL automation across cloud/hybrid.</li>
+          <li>Event-driven orchestration with schedulers and jobs.</li>
+          <li>Secure IAM, auditability, and least-privilege defaults.</li>
+          <li>Multi-source harmonization with lineage and metadata.</li>
+          <li>Excel/CRM/web ingestion normalized for analytics.</li>
+        </ul>
+      </div>
+      <div class="expertise-card card">
+        <h3>Data Analytics</h3>
+        <ul>
+          <li>KPI design, metric guardrails, and adoption playbooks.</li>
+          <li>Anomaly detection on telecom, sales, and logistics data.</li>
+          <li>Forecasting experiments using curated AWS/Python stacks.</li>
+          <li>Scenario modeling to surface opportunities and risks.</li>
+          <li>Executive narratives that tie data to business action.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -257,17 +306,17 @@
   <!-- ========================= -->
   <section id="achievements" class="section">
     <div class="container section-header">
-      <h2>Key Achievements</h2>
-      <p>Track record & major accomplishments</p>
+      <h2>Impact & Recognition</h2>
+      <p>Selected highlights across industries</p>
     </div>
 
     <div class="container card achievements-card">
       <ul class="achievements-list">
-        <li>Built full AWS-based U.S. Trade & Tariff analytics platform</li>
-        <li>Delivered end-to-end BI systems across multiple industries</li>
-        <li>Designed high-performance data warehouses for enterprise workloads</li>
-        <li>Strong ownership and clean engineering principles</li>
-        <li>Automation frameworks for large Excel-based datasets (Python + Glue)</li>
+        <li>Built an AWS lakehouse (S3, Glue, Redshift, Athena) for U.S. trade & tariff analytics with 5M+ rows/year.</li>
+        <li>Delivered D365-integrated BI stacks with early-warning anomaly alerts and executive dashboards.</li>
+        <li>Unified 150+ telecom data sources into real-time KPI systems with geo-spatial drilldowns.</li>
+        <li>Automated Excel-heavy ingestion with Python/Glue frameworks and dimensional models ready for BI.</li>
+        <li>Trusted partner across telecom, finance, e-commerce, and trade domains with end-to-end ownership.</li>
       </ul>
     </div>
   </section>
@@ -356,25 +405,32 @@
       <div class="contact-left">
         <h3>Let’s build something great together.</h3>
         <p class="contact-sub">
-          Whether you need a BI system, a modern data platform, an ETL pipeline, 
+          Whether you need a BI system, a modern data platform, an ETL pipeline,
           or a production-grade analytics environment — let’s connect.
         </p>
+        <div class="contact-links">
+          <a class="contact-pill" href="mailto:salih.sezen@outlook.com">salih.sezen@outlook.com</a>
+          <a class="contact-pill" href="https://www.linkedin.com/in/salihsezen/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="contact-pill" href="https://github.com/salihsezen" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
       </div>
 
       <!-- CONTACT RIGHT (FORM) -->
       <div class="contact-form card">
-        <form>
+        <form id="contact-form">
 
-          <label>Name</label>
-          <input type="text" placeholder="Your name">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
 
-          <label>Email</label>
-          <input type="email" placeholder="Your email">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Your email" required>
 
-          <label>Message</label>
-          <textarea placeholder="Write your message here"></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
 
-          <button class="btn-primary submit-btn">Send Message</button>
+          <button type="submit" class="btn-primary submit-btn">Send Message</button>
+
+          <p id="contact-status" class="contact-status" aria-live="polite"></p>
 
         </form>
       </div>
@@ -423,6 +479,33 @@
         darkIcon.classList.remove('hidden');
         lightIcon.classList.add('hidden');
       }
+    });
+
+    // Contact form mailto handler (no external DB)
+    const contactForm = document.getElementById('contact-form');
+    const contactStatus = document.getElementById('contact-status');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        contactStatus.textContent = 'Please fill in all fields to send your message.';
+        contactStatus.classList.add('error');
+        return;
+      }
+
+      const subject = encodeURIComponent(`Project inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+
+      const mailtoLink = `mailto:salih.sezen@outlook.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+
+      contactStatus.textContent = 'Opening your email client… if it does not open, email me at salih.sezen@outlook.com.';
+      contactStatus.classList.remove('error');
     });
   </script>
 </body>
