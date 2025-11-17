@@ -900,6 +900,23 @@ body.light-theme .theme-toggle-btn .theme-icon {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* tablet navbar adjustments */
+  .navbar .nav-inner {
+    flex-wrap: wrap;
+  }
+
+  .nav-menu {
+    justify-content: center;
+    flex: 1 1 auto;
+  }
+
+  .nav-actions {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 @media (max-width: 620px) {
