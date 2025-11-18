@@ -546,6 +546,14 @@ body.light-theme .theme-toggle-btn .theme-icon {
   margin-bottom: 1rem;
 }
 
+.skills-radar-icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  box-shadow: 0 0 12px rgba(94,181,249,0.7);
+}
+
 .badge {
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
@@ -594,9 +602,19 @@ body.light-theme .theme-toggle-btn .theme-icon {
 ======================================================= */
 
 .skills-card {
-  grid-column: span 2;
   position: relative;
   z-index: 1;
+}
+
+.skills-expertise-row {
+  display: grid;
+  grid-template-columns: 2.8fr 2.2fr;
+  gap: 2.4rem;
+  grid-column: 1 / -1;
+}
+
+.expertise-card {
+  padding: 2.1rem;
 }
 
 .skills-radar-card {
@@ -624,9 +642,9 @@ body.light-theme .theme-toggle-btn .theme-icon {
   width: 195px;
   height: 96px;
   border-radius: 22px;
-  background: radial-gradient(circle at 0% 0%, rgba(15,23,42,0.9), rgba(15,23,42,0.96));
-  border: 1px solid rgba(148,163,184,0.5);
-  box-shadow: 0 0 30px rgba(15,23,42,0.9);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 0 35px rgba(0,0,0,0.5);
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -687,9 +705,15 @@ body.light-theme .theme-toggle-btn .theme-icon {
 .skills-radar-tile.active {
   height: 160px;
   transform: scale(2.0);
+  background: rgba(15,23,42,0.9);
   box-shadow: 0 0 40px rgba(94,181,249,0.7);
   border-color: rgba(94,181,249,0.9);
   z-index: 10;
+}
+
+.skills-radar-tile:hover::before,
+.skills-radar-tile.active::before {
+  opacity: 0.6;
 }
 
 /* Light theme adjustments for Interactive Skills Radar */
@@ -701,13 +725,13 @@ body.light-theme .skills-radar-card {
 }
 
 body.light-theme .skills-radar-tile {
-  background: radial-gradient(circle at 0% 0%, rgba(15,23,42,0.94), rgba(15,23,42,0.98));
-  border-color: rgba(148,163,184,0.35);
-  box-shadow: 0 14px 32px rgba(15,23,42,0.35);
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(0,0,0,0.1);
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
 }
 
 body.light-theme .skills-radar-label {
-  color: #f9fafb;
+  color: #0a0f1d;
   background: linear-gradient(135deg, rgba(96,165,250,0.9), rgba(129,140,248,0.95));
   border-color: rgba(15,23,42,0.45);
   box-shadow: 0 0 16px rgba(15,23,42,0.45);
@@ -1049,11 +1073,15 @@ body.light-theme .skills-radar-label {
   .about-grid,
   .contact-grid,
   .projects-popup {
-    grid-template-columns: 1fr;
-  }
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+      grid-template-columns: 1fr;
+    }
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-expertise-row {
+      grid-template-columns: 1fr;
+    }
 
   .skills-radar-grid {
     flex-wrap: wrap;
