@@ -546,12 +546,32 @@ body.light-theme .theme-toggle-btn .theme-icon {
   margin-bottom: 1rem;
 }
 
-.skills-radar-icon {
-  width: 26px;
-  height: 26px;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  box-shadow: 0 0 12px rgba(94,181,249,0.7);
+.skills-radar-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills-radar-title::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  background: radial-gradient(circle at 30% 30%, #38bdf8 0%, #0ea5e9 35%, #1d4ed8 100%);
+  box-shadow: 0 0 12px rgba(56,189,248,0.85);
+  animation: skills-radar-pulse 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes skills-radar-pulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 10px rgba(56,189,248,0.6);
+  }
+  100% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(56,189,248,1);
+  }
 }
 
 .badge {
