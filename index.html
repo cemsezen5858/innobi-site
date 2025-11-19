@@ -36,7 +36,9 @@
   <!-- ========================= -->
   <header class="navbar">
     <div class="container nav-inner">
-      <div class="logo">INNOBI</div>
+      <div class="logo">
+        <img src="assets/img/DarkModeLogo.png" class="logo-img" id="site-logo" alt="Innobi logo">
+      </div>
 
       <nav class="nav-menu">
         <a href="#home">
@@ -148,6 +150,14 @@
 
       <!-- RIGHT PHOTO -->
       <div class="hero-photo-wrap">
+        <div class="hero-photo-typing">
+          <a href="#about"
+            class="typewrite"
+            data-period="2000"
+            data-type='[ "Hi, I am Salih.","Certified BI Developer.","DWH and Data Integration Architecture.","Data Modeller and Engineer." ]'>
+            <span class="wrap"></span>
+          </a>
+        </div>
         <div class="hero-photo-glow"></div>
         <img src="assets/img/salih.png" class="hero-photo" alt="Salih Sezen">
 
@@ -693,10 +703,17 @@
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('dark-icon');
     const lightIcon = document.getElementById('light-icon');
+    const siteLogo = document.getElementById('site-logo');
 
     const applyTheme = (theme) => {
       const isLight = theme === 'light';
       document.body.classList.toggle('light-theme', isLight);
+
+      if (siteLogo) {
+        siteLogo.src = isLight
+          ? 'assets/img/LightModeLogo.png'
+          : 'assets/img/DarkModeLogo.png';
+      }
 
       if (isLight) {
         localStorage.setItem('theme', 'light');
@@ -1055,6 +1072,64 @@
 
     // Optional: section-based reactions using IntersectionObserver
     // Optional: section-based reactions using IntersectionObserver (no sections now, kept for extensibility)
+  </script>
+
+  <script>
+    var TxtType = function(el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+      var that = this;
+      var delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) { delta /= 2; }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(function() {
+        that.tick();
+      }, delta);
+    };
+
+    window.addEventListener('load', function() {
+      var elements = document.getElementsByClassName('typewrite');
+      for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff }";
+      document.body.appendChild(css);
+    });
   </script>
 
 </body>
