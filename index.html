@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Salih Sezen | End to End Data Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDML5FCGQ8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PDML5FCGQ8');
+  </script>
 </head>
 
 <body>
@@ -19,6 +28,9 @@
     <div class="bg-dots"></div>
   </div>
 
+  <!-- Scroll-triggered Neon Data Beam -->
+  <div id="dataBeam"></div>
+
   <!-- ========================= -->
   <!--          NAVBAR           -->
   <!-- ========================= -->
@@ -28,26 +40,31 @@
 
       <nav class="nav-menu">
         <a href="#home">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9,22 9,12 15,12 15,22"></polyline>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9,22 9,12 15,12 15,22"></polyline>
           </svg>
           Home
         </a>
         <a href="#about">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
           </svg>
           About
         </a>
 
         <div class="dropdown">
-          <a class="dropdown-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14.5 2L20 7.5V8H14.5z"/>
-              <path d="M16 13H8"/>
-              <path d="M16 17H8"/>
-              <path d="M10 9H8"/>
+          <a href="#projects" class="dropdown-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14.5 2L20 7.5V8H14.5z" />
+              <path d="M16 13H8" />
+              <path d="M16 17H8" />
+              <path d="M10 9H8" />
             </svg>
             Projects &#9662;
           </a>
@@ -60,8 +77,10 @@
         </div>
 
         <a href="#contact">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
           Contact
         </a>
@@ -69,10 +88,14 @@
         <div class="nav-actions">
           <!-- Dark/Light Mode Toggle Button -->
           <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-            <svg class="theme-icon" id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="theme-icon" id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
-            <svg class="theme-icon hidden" id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="theme-icon hidden" id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
               <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -112,7 +135,8 @@
         </p>
 
         <p class="hero-sub">
-          &#9889; Expert in processing and architecting multi-TB data pipelines using high-performance SQL, ETL, and cloud technologies.
+          &#9889; Expert in processing and architecting multi-TB data pipelines using high-performance SQL, ETL, and
+          cloud technologies.
         </p>
 
         <p class="hero-sub">
@@ -126,7 +150,7 @@
       <div class="hero-photo-wrap">
         <div class="hero-photo-glow"></div>
         <img src="assets/img/salih.png" class="hero-photo" alt="Salih Sezen">
-        
+
       </div>
       <img src="assets/img/hero-cloud.png" class="hero-cloud" alt="Neon Cloud">
     </div>
@@ -142,17 +166,28 @@
     </div>
 
     <div class="container">
-      <p>Hello, I'm Salih. I specialize in SQL, ETL, Business Intelligence, data warehousing, and data modeling. I've worked extensively with Power BI, Qlik Sense, QlikView, SSRS, and SSIS &mdash; designing, developing, and implementing end-to-end BI solutions across multiple industries.</p>
+      <p>Hello, I'm Salih. I specialize in SQL, ETL, Business Intelligence, data warehousing, and data modeling. I've
+        worked extensively with Power BI, Qlik Sense, QlikView, SSRS, and SSIS &mdash; designing, developing, and
+        implementing end-to-end BI solutions across multiple industries.</p>
 
-      <p>With over 10 years of hands-on experience, I focus on transforming unclear business goals into measurable KPIs, reducing errors through automation and anomaly detection, and helping teams make faster, data-driven decisions.</p>
+      <p>With over 10 years of hands-on experience, I focus on transforming unclear business goals into measurable KPIs,
+        reducing errors through automation and anomaly detection, and helping teams make faster, data-driven decisions.
+      </p>
 
-      <p>Throughout my career, I've built a reputation for bringing clarity and structure to complex analytical requirements.</p>
+      <p>Throughout my career, I've built a reputation for bringing clarity and structure to complex analytical
+        requirements.</p>
 
-      <p>My working style aligns strongly with Leadership Principles &mdash; particularly Dive Deep, Ownership, and Deliver Results.</p>
+      <p>My working style aligns strongly with Leadership Principles &mdash; particularly Dive Deep, Ownership, and
+        Deliver Results.</p>
 
-      <p>I'm currently focused on transitioning my career from Senior BI/DWH development into advanced Cloud Data Engineering. As licensing, infrastructure, hosting, and maintenance costs continue to rise across the industry, I shifted my expertise toward scalable, serverless, cost-efficient, and secure data architectures that reduce operational overhead while increasing performance.</p>
+      <p>I'm currently focused on transitioning my career from Senior BI/DWH development into advanced Cloud Data
+        Engineering. As licensing, infrastructure, hosting, and maintenance costs continue to rise across the industry,
+        I shifted my expertise toward scalable, serverless, cost-efficient, and secure data architectures that reduce
+        operational overhead while increasing performance.</p>
 
-      <p>My learning approach is rooted in understanding patterns, logic, and design principles rather than memorizing syntax. By internalizing core concepts, I can quickly adapt the same reasoning I apply in SQL to other tools, languages, and technologies, enabling me to deliver consistent, scalable, and high-quality data solutions.</p>
+      <p>My learning approach is rooted in understanding patterns, logic, and design principles rather than memorizing
+        syntax. By internalizing core concepts, I can quickly adapt the same reasoning I apply in SQL to other tools,
+        languages, and technologies, enabling me to deliver consistent, scalable, and high-quality data solutions.</p>
     </div>
 
     <div class="container about-grid">
@@ -160,19 +195,26 @@
       <!-- ABOUT CARD -->
       <div class="card about-card">
         <h3>&#128204; About Innobi</h3>
-        <p>Innobi was founded by Salih Sezen in 2020 as a small data and analytics company. <br><br>It was created to support the development of individual and short-term projects, enable research, experimentation, and continuous technical improvement, and bring independent work together under a formal business structure. <br><br>Innobi continues to operate today, primarily for contract-based engagements and specialized data engineering or BI development work.</p>
+        <p>Innobi was founded by Salih Sezen in 2020 as a small data and analytics company. <br><br>It was created to
+          support the development of individual and short-term projects, enable research, experimentation, and
+          continuous technical improvement, and bring independent work together under a formal business structure.
+          <br><br>Innobi continues to operate today, primarily for contract-based engagements and specialized data
+          engineering or BI development work.</p>
         <hr class="about-divider">
         <div class="about-links">
           <a class="btn-secondary" href="https://www.linkedin.com/in/salihsezen/" target="_blank" rel="noreferrer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <circle cx="4.983" cy="5.009" r="2.188"></circle>
-              <path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path>
+              <path
+                d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z">
+              </path>
             </svg>
             LinkedIn
           </a>
           <a class="btn-secondary" href="https://github.com/salihsezen" target="_blank" rel="noreferrer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0  0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0  0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
             </svg>
             GitHub
           </a>
@@ -189,26 +231,33 @@
           <li>
             <strong>&#128313; Career Transition &mdash; Data Engineer / Senior DWH & BI Developer</strong><br>
             2025 &middot; AWS, Python, PySpark, Redshift<br><br>
-            Built full AWS lakehouse pipelines (S3 &rarr; Glue &rarr; Redshift), dimensional models, and analytics-ready marts powering U.S. trade & tariff intelligence and forecasting workflows.<br>
-            <strong>&#128640;Impact:</strong> Designed a scalable, serverless architecture capable of processing large datasets with automated ETL and real-time analytical performance.
+            Built full AWS lakehouse pipelines (S3 &rarr; Glue &rarr; Redshift), dimensional models, and analytics-ready
+            marts powering U.S. trade & tariff intelligence and forecasting workflows.<br>
+            <strong>&#128640;Impact:</strong> Designed a scalable, serverless architecture capable of processing large
+            datasets with automated ETL and real-time analytical performance.
           </li>
           <li>
             <strong>&#128313; Eurofase Lighting &mdash; Senior Business Intelligence Developer</strong><br>
             2024&ndash;2025 &middot; Power BI, SSIS, SSRS, Azure<br><br>
-            Delivered executive dashboards, anomaly alerts, and D365-integrated data warehouses, translating complex requirements into tested, production-ready BI assets.<br>
-            <strong>&#128640;Impact:</strong> Improved reporting accuracy, increased operational visibility, and reduced manual workloads through automated pipelines and self-service analytics.
+            Delivered executive dashboards, anomaly alerts, and D365-integrated data warehouses, translating complex
+            requirements into tested, production-ready BI assets.<br>
+            <strong>&#128640;Impact:</strong> Improved reporting accuracy, increased operational visibility, and reduced
+            manual workloads through automated pipelines and self-service analytics.
           </li>
           <li>
             <strong>&#128313; Vodafone (via Electra Telecom) &mdash; Senior DB & BI Developer</strong><br>
             2015&ndash;2023 &middot; SQL Server, SSIS, Qlik, DBA, Power BI<br><br>
-            Unified 150+ telecom data sources into real-time KPI and alerting systems, scaling to 10TB with automated ETL jobs, drill-down dashboards, and geo-spatial analytics.<br>
-            <strong>&#128640;Impact:</strong> Enabled millisecond-level monitoring and analysis of multi-TB telecom datasets across millions of daily network events.
+            Unified 150+ telecom data sources into real-time KPI and alerting systems, scaling to 10TB with automated
+            ETL jobs, drill-down dashboards, and geo-spatial analytics.<br>
+            <strong>&#128640;Impact:</strong> Enabled millisecond-level monitoring and analysis of multi-TB telecom
+            datasets across millions of daily network events.
           </li>
         </ul>
 
         <hr class="section-divider">
         <div class="special-tags">
-          &#128998; 10+ Years Experience | &#129001; Enterprise-Scale Data | &#128999; Multi-TB Pipelines | &#129002; BI & Cloud Engineering<br>
+          &#128998; 10+ Years Experience | &#129001; Enterprise-Scale Data | &#128999; Multi-TB Pipelines | &#129002; BI
+          & Cloud Engineering<br>
           &#129000; SQL / ETL Specialist | &#129003; AWS & On-Prem DWH | &#11036; End-to-End Solutions
         </div>
       </div>
@@ -257,39 +306,48 @@
 
           <ul class="skill-ratings">
             <li>
-              <div class="skill-top"><span>Advanced SQL &middot; SQL Server &middot; Oracle &middot; Snowflake</span><span class="score">9.8 / 10</span></div>
+              <div class="skill-top"><span>Advanced SQL &middot; SQL Server &middot; Oracle &middot;
+                  Snowflake</span><span class="score">9.8 / 10</span></div>
               <div class="skill-bar" style="--level:98%"></div>
             </li>
             <li>
-              <div class="skill-top"><span>BI: Power BI &middot; SSRS &middot; Qlik Sense &middot; QuickSight &middot; Tableau</span><span class="score">9.7 / 10</span></div>
+              <div class="skill-top"><span>BI: Power BI &middot; SSRS &middot; Qlik Sense &middot; QuickSight &middot;
+                  Tableau</span><span class="score">9.7 / 10</span></div>
               <div class="skill-bar" style="--level:97%"></div>
             </li>
             <li>
-              <div class="skill-top"><span>Dimensional Modelling &middot; Data Warehousing &middot; Star Schema</span><span class="score">9.4 / 10</span></div>
+              <div class="skill-top"><span>Dimensional Modelling &middot; Data Warehousing &middot; Star
+                  Schema</span><span class="score">9.4 / 10</span></div>
               <div class="skill-bar" style="--level:94%"></div>
             </li>
             <li>
-              <div class="skill-top"><span>ETL / ELT Integration (SSIS, ODI, Python Automation)</span><span class="score">9.4 / 10</span></div>
+              <div class="skill-top"><span>ETL / ELT Integration (SSIS, ODI, Python Automation)</span><span
+                  class="score">9.4 / 10</span></div>
               <div class="skill-bar" style="--level:94%"></div>
             </li>
             <li>
-              <div class="skill-top"><span>Data Integrations &middot; ML Foundations &middot; Ownership Mindset</span><span class="score">10 / 10</span></div>
+              <div class="skill-top"><span>Data Integrations &middot; ML Foundations &middot; Ownership
+                  Mindset</span><span class="score">10 / 10</span></div>
               <div class="skill-bar" style="--level:100%"></div>
             </li>
             <li>
-              <div class="skill-top"><span>AWS S3 &middot; Glue &middot; Athena &middot; Lambda &middot; Redshift</span><span class="score">7.2 / 10</span></div>
+              <div class="skill-top"><span>AWS S3 &middot; Glue &middot; Athena &middot; Lambda &middot;
+                  Redshift</span><span class="score">7.2 / 10</span></div>
               <div class="skill-bar" style="--level:72%"></div>
             </li>
             <li>
-              <div class="skill-top"><span>IAM, CloudWatch, EventBridge, VPC basics</span><span class="score">7.0 / 10</span></div>
+              <div class="skill-top"><span>IAM, CloudWatch, EventBridge, VPC basics</span><span class="score">7.0 /
+                  10</span></div>
               <div class="skill-bar" style="--level:70%"></div>
             </li>
             <li>
-              <div class="skill-top"><span>Cloud-Native Data Pipelines &amp; Parquet Optimization</span><span class="score">7.0 / 10</span></div>
+              <div class="skill-top"><span>Cloud-Native Data Pipelines &amp; Parquet Optimization</span><span
+                  class="score">7.0 / 10</span></div>
               <div class="skill-bar" style="--level:70%"></div>
             </li>
             <li>
-              <div class="skill-top"><span>Python ETL (pandas, numpy, boto3, pyarrow ..) &middot; PySpark</span><span class="score">6.5 / 10</span></div>
+              <div class="skill-top"><span>Python ETL (pandas, numpy, boto3, pyarrow ..) &middot; PySpark</span><span
+                  class="score">6.5 / 10</span></div>
               <div class="skill-bar" style="--level:65%"></div>
             </li>
           </ul>
@@ -309,19 +367,23 @@
 
             <h4>2. Data Warehousing &amp; Modelling</h4>
             <p>
-              Star/Snowflake schema design, fact/dimension rigor, staging frameworks, DWH governance, high-volume e-commerce,
+              Star/Snowflake schema design, fact/dimension rigor, staging frameworks, DWH governance, high-volume
+              e-commerce,
               trade logistics, and telecommunication datasets.
             </p>
 
             <h4>3. Data Integration &amp; Automation</h4>
             <p>
-              Python ETL &middot; SSIS &middot; API ingestion &middot; Python scheduling &middot; serverless automation<br>
-              Data pipelines, auditability, quality rules, anomaly detection, alerting systems, and forecast foundations.
+              Python ETL &middot; SSIS &middot; API ingestion &middot; Python scheduling &middot; serverless
+              automation<br>
+              Data pipelines, auditability, quality rules, anomaly detection, alerting systems, and forecast
+              foundations.
             </p>
 
             <h4>4. Cloud Data Engineering (AWS Lakehouse)</h4>
             <p>
-              S3 &middot; Glue &middot; Lake Formation &middot; Redshift &middot; Athena &middot; Lambda &middot; EventBridge<br>
+              S3 &middot; Glue &middot; Lake Formation &middot; Redshift &middot; Athena &middot; Lambda &middot;
+              EventBridge<br>
               Modern ETL/ELT, orchestration, schema evolution, job optimization, cost-efficient design.
             </p>
           </div>
@@ -354,56 +416,136 @@
     <div class="container card">
       <div class="projects-popup">
 
-      <div class="popup-card">
-        <h3>1 &mdash; US Trade Tariff Impact Analysis</h3>
-        <p class="popup-desc">
-          A production-grade AWS analytics platform to analyze U.S. trade flows and tariff exposure.
-        </p>
-        <div class="tags">
-          <span class="tag cyan">Data Engineering</span>
-          <span class="tag purple">DWH</span>
-          <span class="tag blue">BI</span>
-          <span class="tag orange">ETL</span>
-        </div>
-      </div>
+        <a href="#proj1" class="project-card">
+          <div class="project-card-inner">
+            <div class="project-thumb">
+              <div class="project-thumb-layer project-thumb-side project-thumb-left">
+                <img src="assets/img/USTradeTariffImpactAnalysis2.jpg"
+                  alt="US Trade Tariff Impact Analysis secondary view 1">
+              </div>
+              <div class="project-thumb-layer project-thumb-side project-thumb-right">
+                <img src="assets/img/USTradeTariffImpactAnalysis3.jpg"
+                  alt="US Trade Tariff Impact Analysis secondary view 2">
+              </div>
+              <div class="project-thumb-layer project-thumb-main">
+                <img src="assets/img/USTradeTariffImpactAnalysis1.jpg" alt="US Trade Tariff Impact Analysis dashboard">
+              </div>
+              <div class="project-thumb-overlay">
+                <span class="project-thumb-cta">View Project</span>
+              </div>
+            </div>
 
-      <div class="popup-card">
-        <h3>2 &mdash; Sales Decision Maker</h3>
-        <p class="popup-desc">
-          Dimensional-model-driven BI environment for sales performance optimization.
-        </p>
-        <div class="tags">
-          <span class="tag purple">DWH</span>
-          <span class="tag blue">BI</span>
-          <span class="tag orange">ETL</span>
-        </div>
-      </div>
+            <div class="project-card-body">
+              <h3>1 &mdash; US Trade Tariff Impact Analysis</h3>
+              <p class="popup-desc">
+                A production-grade AWS analytics platform to analyze U.S. trade flows and tariff exposure.
+              </p>
+              <div class="tags">
+                <span class="tag cyan">Data Engineering</span>
+                <span class="tag purple">DWH</span>
+                <span class="tag blue">BI</span>
+                <span class="tag orange">ETL</span>
+              </div>
+            </div>
+          </div>
+        </a>
 
-      <div class="popup-card">
-        <h3>3 &mdash; Project & Logistic Control System</h3>
-        <p class="popup-desc">
-          Full-stack project & logistics control platform with reporting layer.
-        </p>
-        <div class="tags">
-          <span class="tag teal">Software Dev</span>
-          <span class="tag green">Architecture</span>
-          <span class="tag blue">Web Coding</span>
-        </div>
-      </div>
+        <a href="#proj2" class="project-card">
+          <div class="project-card-inner">
+            <div class="project-thumb">
+              <div class="project-thumb-layer project-thumb-side project-thumb-left">
+                <img src="assets/img/SalesDecisionMaker2.jpg" alt="Sales Decision Maker secondary view 1">
+              </div>
+              <div class="project-thumb-layer project-thumb-side project-thumb-right">
+                <img src="assets/img/SalesDecisionMaker3.jpg" alt="Sales Decision Maker secondary view 2">
+              </div>
+              <div class="project-thumb-layer project-thumb-main">
+                <img src="assets/img/SalesDecisionMaker1.jpg" alt="Sales Decision Maker dashboard">
+              </div>
+              <div class="project-thumb-overlay">
+                <span class="project-thumb-cta">View Project</span>
+              </div>
+            </div>
 
-      <div class="popup-card">
-        <h3>4 &mdash; Forecast & Anomaly Detector</h3>
-        <p class="popup-desc">
-          A machine learning model to forecast patterns and detect anomalies.
-        </p>
-        <div class="tags">
-          <span class="tag violet">AI</span>
-          <span class="tag green">Machine Learning</span>
-          <span class="tag red">DBA</span>
-        </div>
-      </div>
+            <div class="project-card-body">
+              <h3>2 &mdash; Sales Decision Maker</h3>
+              <p class="popup-desc">
+                Dimensional-model-driven BI environment for sales performance optimization.
+              </p>
+              <div class="tags">
+                <span class="tag purple">DWH</span>
+                <span class="tag blue">BI</span>
+                <span class="tag orange">ETL</span>
+              </div>
+            </div>
+          </div>
+        </a>
 
-    </div>
+        <a href="#proj3" class="project-card">
+          <div class="project-card-inner">
+            <div class="project-thumb">
+              <div class="project-thumb-layer project-thumb-side project-thumb-left">
+                <img src="assets/img/SalesDecisionMaker2.jpg" alt="Project & Logistic Control System secondary view 1">
+              </div>
+              <div class="project-thumb-layer project-thumb-side project-thumb-right">
+                <img src="assets/img/SalesDecisionMaker3.jpg" alt="Project & Logistic Control System secondary view 2">
+              </div>
+              <div class="project-thumb-layer project-thumb-main">
+                <img src="assets/img/SalesDecisionMaker1.jpg" alt="Project & Logistic Control System dashboard">
+              </div>
+              <div class="project-thumb-overlay">
+                <span class="project-thumb-cta">View Project</span>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <h3>3 &mdash; Project &amp; Logistic Control System</h3>
+              <p class="popup-desc">
+                Full-stack project &amp; logistics control platform with reporting layer.
+              </p>
+              <div class="tags">
+                <span class="tag teal">Software Dev</span>
+                <span class="tag green">Architecture</span>
+                <span class="tag blue">Web Coding</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#proj4" class="project-card">
+          <div class="project-card-inner">
+            <div class="project-thumb">
+              <div class="project-thumb-layer project-thumb-side project-thumb-left">
+                <img src="assets/img/USTradeTariffImpactAnalysis2.jpg"
+                  alt="Forecast & Anomaly Detector secondary view 1">
+              </div>
+              <div class="project-thumb-layer project-thumb-side project-thumb-right">
+                <img src="assets/img/USTradeTariffImpactAnalysis3.jpg"
+                  alt="Forecast & Anomaly Detector secondary view 2">
+              </div>
+              <div class="project-thumb-layer project-thumb-main">
+                <img src="assets/img/USTradeTariffImpactAnalysis1.jpg" alt="Forecast & Anomaly Detector dashboard">
+              </div>
+              <div class="project-thumb-overlay">
+                <span class="project-thumb-cta">View Project</span>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <h3>4 &mdash; Forecast &amp; Anomaly Detector</h3>
+              <p class="popup-desc">
+                A machine learning model to forecast patterns and detect anomalies.
+              </p>
+              <div class="tags">
+                <span class="tag violet">AI</span>
+                <span class="tag green">Machine Learning</span>
+                <span class="tag red">DBA</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
     </div>
 
   </section>
@@ -428,21 +570,26 @@
         </p>
         <div class="contact-links">
           <a class="contact-pill" href="mailto:salih.sezen@outlook.com">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
             salih.sezen@outlook.com
           </a>
           <a class="contact-pill" href="https://www.linkedin.com/in/salihsezen/" target="_blank" rel="noreferrer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <circle cx="4.983" cy="5.009" r="2.188"></circle>
-              <path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path>
+              <path
+                d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z">
+              </path>
             </svg>
             LinkedIn
           </a>
           <a class="contact-pill" href="https://github.com/salihsezen" target="_blank" rel="noreferrer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
             </svg>
             GitHub
           </a>
@@ -800,7 +947,116 @@
       contactStatus.textContent = 'Opening your email client&hellip; if it does not open, email me at salih.sezen@outlook.com.';
       contactStatus.classList.remove('error');
     });
+
+    // Scroll-driven neon data beam
+    const beam = document.getElementById('dataBeam');
+
+    const beamAnchors = {
+      centerX: () => window.innerWidth / 2,
+      aboutX: null,
+      skillsX: null,
+      aboutStartY: null,
+      skillsStartY: null,
+      projectsStartY: null
+    };
+    let lastBeamSegment = null;
+    let fireworkTriggered = false;
+
+    const calculateBeamAnchors = () => {
+      const aboutCard = document.querySelector('.about-grid .about-card');
+      const journeyCard = document.querySelector('.about-grid .journey-card');
+      const skillsRow = document.querySelector('.skills-expertise-row');
+      const skillsCard = document.querySelector('.skills-card');
+      const expertiseCard = document.querySelector('.expertise-card');
+      const projectsSection = document.getElementById('projects');
+
+      if (aboutCard && journeyCard) {
+        const r1 = aboutCard.getBoundingClientRect();
+        const r2 = journeyCard.getBoundingClientRect();
+        beamAnchors.aboutX = (r1.right + r2.left) / 2 + window.scrollX;
+        beamAnchors.aboutStartY = r1.top + window.scrollY;
+      }
+
+      if (skillsRow && skillsCard && expertiseCard) {
+        const r1 = skillsCard.getBoundingClientRect();
+        const r2 = expertiseCard.getBoundingClientRect();
+        beamAnchors.skillsX = (r1.right + r2.left) / 2 + window.scrollX;
+        beamAnchors.skillsStartY = skillsRow.getBoundingClientRect().top + window.scrollY;
+      }
+
+      if (projectsSection) {
+        const pr = projectsSection.getBoundingClientRect();
+        beamAnchors.projectsStartY = pr.top + window.scrollY;
+      }
+    };
+
+    const updateBeamPosition = () => {
+      if (!beam) return;
+
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+      const maxMove = document.body.scrollHeight - 300;
+      const newY = progress * maxMove;
+
+      let targetX = beamAnchors.centerX();
+      let currentSegment = 'center';
+
+      if (
+        beamAnchors.aboutX !== null &&
+        beamAnchors.aboutStartY !== null &&
+        newY >= beamAnchors.aboutStartY &&
+        (beamAnchors.skillsStartY === null || newY < beamAnchors.skillsStartY)
+      ) {
+        targetX = beamAnchors.aboutX;
+      } else if (
+        beamAnchors.skillsX !== null &&
+        beamAnchors.skillsStartY !== null &&
+        newY >= beamAnchors.skillsStartY &&
+        (beamAnchors.projectsStartY === null || newY < beamAnchors.projectsStartY)
+      ) {
+        targetX = beamAnchors.skillsX;
+        currentSegment = 'skills';
+      } else if (
+        beamAnchors.projectsStartY !== null &&
+        newY >= beamAnchors.projectsStartY
+      ) {
+        currentSegment = 'projects';
+      }
+
+      const adjustedX = targetX - 10; // shift 10px to the left
+      beam.style.transform = `translate(${adjustedX}px, ${newY}px)`;
+
+      if (currentSegment !== lastBeamSegment && lastBeamSegment !== null) {
+        beam.classList.remove('beam-burst');
+        void beam.offsetWidth; // force reflow to restart animation
+        beam.classList.add('beam-burst');
+      }
+      lastBeamSegment = currentSegment;
+
+      // firework at bottom
+      if (progress >= 0.99 && !fireworkTriggered) {
+        beam.classList.remove('beam-firework');
+        void beam.offsetWidth;
+        beam.classList.add('beam-firework');
+        fireworkTriggered = true;
+      } else if (progress < 0.99 && fireworkTriggered) {
+        beam.classList.remove('beam-firework');
+        fireworkTriggered = false;
+      }
+    };
+
+    calculateBeamAnchors();
+    updateBeamPosition();
+    window.addEventListener('scroll', updateBeamPosition);
+    window.addEventListener('resize', () => {
+      calculateBeamAnchors();
+      updateBeamPosition();
+    });
+
+    // Optional: section-based reactions using IntersectionObserver
+    // Optional: section-based reactions using IntersectionObserver (no sections now, kept for extensibility)
   </script>
 
 </body>
+
 </html>
