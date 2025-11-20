@@ -1273,12 +1273,17 @@ body.light-theme .status-dot {
   line-height: 1.2;
   letter-spacing: 0.02em;
   max-width: 32ch;
+  font-weight: 800;
 }
 
 .hero-title-gradient {
   background: linear-gradient(90deg, #38e5ff, #3a70ff, #a855f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  display: inline-block;
 }
 
 .hero-sub {
