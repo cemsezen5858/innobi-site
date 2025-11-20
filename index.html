@@ -71,7 +71,7 @@
             Projects &#9662;
           </a>
           <div class="dropdown-panel">
-            <a href="#proj1">1 &mdash; US Trade Tariff Impact Analysis</a>
+            <a href="project-us-trade-tariff.html">1 &mdash; US Trade Tariff Impact Analysis</a>
             <a href="#proj2">2 &mdash; Sales Decision Maker</a>
             <a href="#proj3">3 &mdash; Project & Logistic Control System</a>
             <a href="#proj4">4 &mdash; Forecast & Anomaly Detector</a>
@@ -123,10 +123,18 @@
 
       <!-- LEFT TEXT -->
       <div class="hero-text">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span class="status-text">Available for Hire</span>
+        </div>
         <h1>
-          10+ Years of BI, Data Engineering, and<br>
-          Enterprise-Scale Reporting
+          Architecting <span class="hero-title-gradient">Intelligent</span><br>
+          Data Ecosystems
         </h1>
+
+        <p class="hero-sub">
+          🗓️ 10+ Years of BI, Data Engineering, and Enterprise-Scale Reporting.
+        </p>
 
         <p class="hero-sub">
           &#10024; Countless end-to-end BI, reporting, and data integration projects.
@@ -145,26 +153,36 @@
           &#127757; Experienced across telecom, finance, e-commerce, and global enterprise environments.
         </p>
 
-        <a href="#projects" class="btn-primary">View Projects</a>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-hero btn-hero-primary">Explore Projects</a>
+          <a href="#contact" class="btn-hero btn-hero-ghost">Contact Me</a>
+        </div>
       </div>
 
       <!-- RIGHT PHOTO -->
       <div class="hero-photo-wrap">
-        <div class="hero-photo-typing">
-          <a href="#about"
-            class="typewrite"
-            data-period="2000"
-            data-type='[ "Hi, I am Salih.","Certified BI Developer.","DWH and Data Integration Architecture.","Data Modeller and Engineer." ]'>
-            <span class="wrap"></span>
-          </a>
+        <div class="hero-photo-frame">
+          <img src="assets/img/salih.png" class="hero-photo" alt="Salih Sezen">
+          <div class="hero-photo-typing">
+            <a href="#about"
+              class="typewrite"
+              data-period="2200"
+              data-type='[  "Hello, I am Salih.", "Initializing System...", "Loading BI Modules...", "Optimizing SQL Queries...",  "Creating Data Warehouse..." ]'>
+              <span class="wrap"></span>
+            </a>
+          </div>
         </div>
         <div class="hero-photo-glow"></div>
-        <img src="assets/img/salih.png" class="hero-photo" alt="Salih Sezen">
-
       </div>
       <img src="assets/img/hero-cloud.png" class="hero-cloud" alt="Neon Cloud">
     </div>
   </section>
+
+  <div class="scroll-indicator-wrap">
+    <div class="scroll-mouse" aria-hidden="true">
+      <span class="scroll-wheel"></span>
+    </div>
+  </div>
 
 
   <!-- ========================= -->
@@ -172,7 +190,7 @@
   <!-- ========================= -->
   <section id="about" class="section about">
     <div class="container section-header">
-      <h2>About</h2>
+      <h2>About <span class="hero-title-gradient">Me</span></h2>
     </div>
 
     <div class="container">
@@ -419,14 +437,14 @@
   <!-- ========================= -->
   <section id="projects" class="section">
     <div class="container section-header">
-      <h2>Projects</h2>
+      <h2>Explore <span class="hero-title-gradient">Projects</span></h2>
       <p>Selected Work & Live BI Platforms</p>
     </div>
 
     <div class="container card">
       <div class="projects-popup">
 
-        <a href="#proj1" class="project-card">
+        <a href="project-us-trade-tariff.html" class="project-card" id="proj1">
           <div class="project-card-inner">
             <div class="project-thumb">
               <div class="project-thumb-layer project-thumb-side project-thumb-left">
@@ -566,7 +584,7 @@
   <!-- ========================= -->
   <section id="contact" class="section contact">
     <div class="container section-header">
-      <h2>Contact</h2>
+      <h2>Contact <span class="hero-title-gradient">Me</span></h2>
       <p>Let's build something great together</p>
     </div>
 
@@ -606,7 +624,7 @@
         </div>
       </div>
 
-      <div class="contact-form card">
+      <div class="contact-form card tilt-card">
         <form id="contact-form">
 
           <label for="name">Name</label>
@@ -963,6 +981,45 @@
 
       contactStatus.textContent = 'Opening your email client&hellip; if it does not open, email me at salih.sezen@outlook.com.';
       contactStatus.classList.remove('error');
+    });
+
+    // Lightweight tilt effect (Apple TV style) for cards
+    const tiltCards = Array.from(document.querySelectorAll('.tilt-card'));
+    tiltCards.forEach((card) => {
+      const maxTilt = 10;
+      const perspective = 1200;
+
+      const resetTilt = () => {
+        card.style.transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg)`;
+        card.style.setProperty('--glow-x', '50%');
+        card.style.setProperty('--glow-y', '50%');
+      };
+
+      card.addEventListener('mouseenter', () => {
+        card.classList.add('is-tilting');
+      });
+
+      card.addEventListener('mousemove', (event) => {
+        const rect = card.getBoundingClientRect();
+        const relativeX = event.clientX - rect.left;
+        const relativeY = event.clientY - rect.top;
+        const pctX = relativeX / rect.width;
+        const pctY = relativeY / rect.height;
+
+        const rotateY = (0.5 - pctX) * 2 * maxTilt;
+        const rotateX = (pctY - 0.5) * 2 * maxTilt;
+
+        card.style.transform = `perspective(${perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        card.style.setProperty('--glow-x', `${pctX * 100}%`);
+        card.style.setProperty('--glow-y', `${pctY * 100}%`);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.classList.remove('is-tilting');
+        resetTilt();
+      });
+
+      resetTilt();
     });
 
     // Scroll-driven neon data beam

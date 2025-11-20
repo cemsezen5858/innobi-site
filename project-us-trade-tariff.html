@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>US Trade Tariff Impact Analysis | Innobi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ========================= -->
+  <!--   GLOBAL BACKGROUND GRID  -->
+  <!-- ========================= -->
+  <div class="bg-layers">
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-dots"></div>
+  </div>
+
+  <!-- Optional: static beam anchor (no JS required for layout) -->
+  <div id="dataBeam"></div>
+
+  <!-- ========================= -->
+  <!--          NAVBAR           -->
+  <!-- ========================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">
+        <img src="assets/img/DarkModeLogo.png" class="logo-img" id="site-logo" alt="Innobi logo">
+      </div>
+
+      <nav class="nav-menu">
+        <a href="index.html#home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9,22 9,12 15,12 15,22"></polyline>
+          </svg>
+          Home
+        </a>
+        <a href="index.html#about">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          About
+        </a>
+
+        <div class="dropdown">
+          <a href="index.html#projects" class="dropdown-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14.5 2L20 7.5V8H14.5z" />
+              <path d="M16 13H8" />
+              <path d="M16 17H8" />
+              <path d="M10 9H8" />
+            </svg>
+            Projects &#9662;
+          </a>
+          <div class="dropdown-panel">
+            <a href="index.html#proj1">1 &mdash; US Trade Tariff Impact Analysis</a>
+            <a href="index.html#proj2">2 &mdash; Sales Decision Maker</a>
+            <a href="index.html#proj3">3 &mdash; Project & Logistic Control System</a>
+            <a href="index.html#proj4">4 &mdash; Forecast & Anomaly Detector</a>
+          </div>
+        </div>
+
+        <a href="index.html#contact">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Contact
+        </a>
+
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="theme-icon" id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="theme-icon hidden" id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ========================= -->
+  <!--      1. PROJECT SUMMARY   -->
+  <!-- ========================= -->
+  <section class="section project-summary">
+    <div class="container">
+      <div class="project-summary-card project-summary-grid">
+        <div class="project-summary-main">
+          <h1 class="project-title">
+            US Trade Tariff Impact Analysis
+          </h1>
+          <p class="project-summary-text">
+            An end-to-end analytics solution that ingests U.S. import/export data,
+            applies HTS-based tariff logic, and surfaces the cost and margin impact
+            across products, partners, and trade routes.
+          </p>
+          <p class="project-summary-text">
+            The system enables teams to simulate tariff scenarios, identify
+            high-risk SKUs and markets, and prioritize mitigation strategies
+            with clear, executive-ready visuals.
+          </p>
+
+          <div class="project-summary-facts">
+            <ul class="project-facts">
+              <li>
+                <span class="project-fact-label">Data Domain</span>
+                <span class="project-pill">US Imports / Exports</span>
+                <span class="project-pill">Tariff &amp; Duty</span>
+                <span class="project-pill">HTS / HS Codes</span>
+              </li>
+              <li>
+                <span class="project-fact-label">Status</span>
+                <span class="project-pill pill-success">In Production</span>
+              </li>
+              <li>
+                <span class="project-fact-label">Period</span>
+                <span class="project-pill">2022 &mdash; 2025</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="project-summary-meta">
+          <div class="project-views-header">
+            <div class="project-views-title-row">
+              <div class="project-views-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="14" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="10.5" r="2.5"></circle>
+                  <path d="M13 13h5l-2-3-2.5 3.5L12 12l-3 4"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="project-views-title">Project Views</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-views-slider">
+            <button class="project-views-nav project-views-nav-prev" aria-label="Previous view">&#10094;</button>
+            <div class="project-views-frame">
+              <img src="assets/img/USTradeTariffImpactAnalysis1.jpg"
+                alt="US Trade Tariff Impact Analysis dashboard view 1"
+                class="project-view active" data-index="0">
+              <img src="assets/img/USTradeTariffImpactAnalysis2.jpg"
+                alt="US Trade Tariff Impact Analysis dashboard view 2"
+                class="project-view" data-index="1">
+              <img src="assets/img/USTradeTariffImpactAnalysis3.jpg"
+                alt="US Trade Tariff Impact Analysis dashboard view 3"
+                class="project-view" data-index="2">
+            </div>
+            <button class="project-views-nav project-views-nav-next" aria-label="Next view">&#10095;</button>
+          </div>
+
+          <div class="project-views-dots">
+            <button class="project-views-dot active" data-index="0" aria-label="Show view 1"></button>
+            <button class="project-views-dot" data-index="1" aria-label="Show view 2"></button>
+            <button class="project-views-dot" data-index="2" aria-label="Show view 3"></button>
+          </div>
+          <p class="project-views-caption">
+            Image <span id="projectViewIndex">1</span> of 3
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================= -->
+  <!--     2. PROJECT PREVIEW    -->
+  <!-- ========================= -->
+  <section class="section project-preview">
+    <div class="container">
+      <div class="project-preview-card">
+        <div class="project-preview-media">
+          <div class="project-preview-main">
+            <img src="assets/img/USTradeTariffImpactAnalysis1.jpg"
+              alt="US Trade Tariff Impact Analysis main dashboard">
+          </div>
+          <div class="project-preview-side project-preview-side-top">
+            <img src="assets/img/USTradeTariffImpactAnalysis2.jpg"
+              alt="US Trade Tariff Impact Analysis secondary view 1">
+          </div>
+          <div class="project-preview-side project-preview-side-bottom">
+            <img src="assets/img/USTradeTariffImpactAnalysis3.jpg"
+              alt="US Trade Tariff Impact Analysis secondary view 2">
+          </div>
+        </div>
+
+        <div class="project-preview-caption">
+          <p>
+            The dashboards highlight import and export flows, tariff exposure by HTS code,
+            and margin impact per country and product group. Stakeholders can move from
+            global overviews into drill-through views for specific routes, suppliers, or SKUs.
+          </p>
+          <p class="project-preview-note">
+            Dashboard Preview &mdash; Import / Export &amp; Tariff Impact, 2022&ndash;2024
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================= -->
+  <!--    3. PROJECT INFORMATION -->
+  <!-- ========================= -->
+  <section class="section project-info">
+    <div class="container">
+      <div class="project-info-card">
+        <div class="project-info-grid">
+
+          <!-- LEFT COLUMN -->
+          <div class="project-info-main">
+            <h2>Project Overview</h2>
+            <p>
+              US Trade Tariff Impact Analysis is a cloud-based analytics platform that centralizes
+              customs, tariff, and logistics data to answer a simple question: <strong>How do
+              global trade decisions impact cost, margin, and risk?</strong>
+            </p>
+            <p>
+              The solution ingests raw trade files, harmonizes them into a curated data model,
+              applies HTS-based tariff logic, and exposes both historical and forward-looking
+              insights for finance, supply chain, and sourcing teams.
+            </p>
+
+            <h3>Project Goals</h3>
+            <ul class="project-bullets">
+              <li>Unify fragmented import/export, tariff, and logistics data in one analytical model.</li>
+              <li>Provide near real-time visibility into landed cost, margin, and tariff exposure.</li>
+              <li>Enable what-if simulations for tariff changes, supplier switches, and routing scenarios.</li>
+              <li>Reduce manual spreadsheet work and improve auditability of trade decisions.</li>
+            </ul>
+
+            <h3>End-to-End Flow</h3>
+            <ul class="project-bullets">
+              <li>Raw customs declarations and shipment data land in AWS S3 (landing / raw zones).</li>
+              <li>AWS Glue jobs standardize, enrich, and join data with HTS tables and reference dimensions.</li>
+              <li>Curated fact and dimension tables are loaded into Redshift for analytics and exploration.</li>
+              <li>Semantic models and dashboards are built in QuickSight / Power BI for business users.</li>
+              <li>Scheduled jobs keep the model fresh while cost-aware partitioning keeps performance high.</li>
+            </ul>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <aside class="project-info-sidebar">
+            <div class="info-group">
+              <h4>Tech Stack</h4>
+              <div class="info-pills">
+                <span class="info-pill">AWS</span>
+                <span class="info-pill">S3</span>
+                <span class="info-pill">Glue</span>
+                <span class="info-pill">Lambda</span>
+                <span class="info-pill">Redshift</span>
+                <span class="info-pill">Athena</span>
+                <span class="info-pill">QuickSight</span>
+                <span class="info-pill">Power BI</span>
+              </div>
+            </div>
+
+            <div class="info-group">
+              <h4>Dataset &amp; Volumes</h4>
+              <ul class="info-list">
+                <li>HTS / HS code catalogs with duty and tariff attributes.</li>
+                <li>Country-, port-, and partner-level trade metrics.</li>
+                <li>Multi-year import/export history with millions of rows.</li>
+                <li>Supplemental cost tables for freight, insurance, and handling.</li>
+              </ul>
+            </div>
+
+            <div class="info-group">
+              <h4>Challenges Solved</h4>
+              <ul class="info-list">
+                <li>Aligning disparate data sources (customs, ERP, freight providers).</li>
+                <li>Maintaining a clean HTS mapping for changing regulations.</li>
+                <li>Handling large datasets while keeping query latency low.</li>
+                <li>Delivering consistent metrics for finance and supply chain teams.</li>
+              </ul>
+            </div>
+
+            <div class="info-group">
+              <h4>Performance Achievements</h4>
+              <ul class="info-list">
+                <li>Sub-second drill-throughs on key dashboards.</li>
+                <li>Daily load windows reduced from hours to minutes.</li>
+                <li>Storage optimized with columnar formats and partitioning.</li>
+                <li>Cost visibility improved across thousands of SKUs and lanes.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================= -->
+  <!--          FOOTER           -->
+  <!-- ========================= -->
+  <footer class="footer">
+    <p>&copy; 2025 Innobi &mdash; Data Engineering &middot; BI &middot; Cloud Architecture</p>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('dark-icon');
+    const lightIcon = document.getElementById('light-icon');
+    const siteLogo = document.getElementById('site-logo');
+
+    const applyTheme = (theme) => {
+      const isLight = theme === 'light';
+      document.body.classList.toggle('light-theme', isLight);
+
+      if (siteLogo) {
+        siteLogo.src = isLight
+          ? 'assets/img/LightModeLogo.png'
+          : 'assets/img/DarkModeLogo.png';
+      }
+
+      if (isLight) {
+        localStorage.setItem('theme', 'light');
+        darkIcon.classList.remove('hidden');
+        lightIcon.classList.add('hidden');
+      } else {
+        localStorage.setItem('theme', 'dark');
+        darkIcon.classList.add('hidden');
+        lightIcon.classList.remove('hidden');
+      }
+    };
+
+    const storedTheme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+    applyTheme(storedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(nextTheme);
+    });
+
+    // Simple project views slider for Section 1
+    (function () {
+      const frame = document.querySelector('.project-views-frame');
+      if (!frame) return;
+
+      const slides = Array.from(frame.querySelectorAll('.project-view'));
+      const dots = Array.from(document.querySelectorAll('.project-views-dot'));
+      const prev = document.querySelector('.project-views-nav-prev');
+      const next = document.querySelector('.project-views-nav-next');
+      const indexLabel = document.getElementById('projectViewIndex');
+
+      let current = 0;
+      let autoTimer = null;
+
+      const showSlide = (index) => {
+        if (!slides.length) return;
+        const total = slides.length;
+        current = (index + total) % total;
+
+        slides.forEach((img, i) => {
+          img.classList.toggle('active', i === current);
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === current);
+        });
+
+        if (indexLabel) {
+          indexLabel.textContent = String(current + 1);
+        }
+      };
+
+      const scheduleAutoAdvance = () => {
+        if (autoTimer) window.clearInterval(autoTimer);
+        autoTimer = window.setInterval(() => {
+          showSlide(current + 1);
+        }, 3000);
+      };
+
+      if (prev) {
+        prev.addEventListener('click', () => showSlide(current - 1));
+      }
+      if (next) {
+        next.addEventListener('click', () => showSlide(current + 1));
+      }
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const idx = Number(dot.dataset.index) || 0;
+          showSlide(idx);
+        });
+      });
+
+      showSlide(0);
+      scheduleAutoAdvance();
+
+      // Reset timer on manual interaction
+      [prev, next, ...dots].forEach((el) => {
+        if (!el) return;
+        el.addEventListener('click', scheduleAutoAdvance);
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
