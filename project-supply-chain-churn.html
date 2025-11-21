@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Supply Chain & Customer Churn Intelligence | Innobi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+
+  <div class="bg-layers">
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-dots"></div>
+  </div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">
+        <img src="assets/img/DarkModeLogo.png" class="logo-img" id="site-logo" alt="Innobi logo">
+      </div>
+
+      <nav class="nav-menu">
+        <a href="index.html#home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9,22 9,12 15,12 15,22"></polyline>
+          </svg>
+          Home
+        </a>
+        <a href="index.html#about">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          About
+        </a>
+
+        <div class="dropdown">
+          <a href="index.html#projects" class="dropdown-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14.5 2L20 7.5V8H14.5z" />
+              <path d="M16 13H8" />
+              <path d="M16 17H8" />
+              <path d="M10 9H8" />
+            </svg>
+            Projects &#9662;
+          </a>
+          <div class="dropdown-panel">
+            <a href="project-us-trade-tariff.html">1 &mdash; US Trade Tariff Impact Analysis</a>
+            <a href="project-supply-chain-churn.html">2 &mdash; Supply Chain &amp; Customer Churn Intelligence</a>
+            <a href="project-executive-sales-command-center.html">3 &mdash; Executive Sales Command Center</a>
+          </div>
+        </div>
+
+        <a href="index.html#contact">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Contact
+        </a>
+
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="theme-icon" id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="theme-icon hidden" id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section project-summary">
+    <div class="container">
+      <div class="project-summary-card project-summary-grid">
+        <div class="project-summary-main">
+          <h1 class="project-title">
+            Supply Chain & Customer Churn Intelligence
+          </h1>
+          
+          <p class="project-summary-text">
+            A dual-purpose BI ecosystem designed to optimize logistics performance while minimizing customer attrition. 
+            By integrating AdventureWorks sales data with logistics metrics, this solution correlates shipping delays with profit margins.
+          </p>
+          <p class="project-summary-text">
+            Beyond standard reporting, it features a <strong>prescriptive decision engine</strong> driven by complex DAX logic that automatically flags underperforming products for delisting or vendor renegotiation.
+          </p>
+
+          <div class="project-actions">
+            <a href="https://github.com/salihsezen" class="btn-secondary project-action-btn" target="_blank" rel="noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              View Code
+            </a>
+            <a href="#project-preview" class="btn-secondary project-action-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              View Dashboard
+            </a>
+          </div>
+
+          <div class="project-summary-facts">
+            <ul class="project-facts">
+              <li>
+                <span class="project-fact-label">Data Domain</span>
+                <span class="project-pill">Supply Chain</span>
+                <span class="project-pill">CRM / Churn</span>
+              </li>
+              <li>
+                <span class="project-fact-label">Technique</span>
+                <span class="project-pill">Prescriptive Analytics</span>
+                <span class="project-pill pill-success">Automated Logic</span>
+              </li>
+              <li>
+                <span class="project-fact-label">Tech Stack</span>
+                <span class="project-pill">Power BI</span>
+                <span class="project-pill">DAX</span>
+                <span class="project-pill">Geospatial</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="project-summary-meta">
+          <div class="project-views-header">
+            <div class="project-views-title-row">
+              <div class="project-views-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              </div>
+              <div><h3 class="project-views-title">Project Views</h3></div>
+            </div>
+          </div>
+
+          <div class="project-views-slider">
+            <button class="project-views-nav project-views-nav-prev" aria-label="Previous view">&#10094;</button>
+            <div class="project-views-frame">
+              <div class="project-view active" data-index="0">
+                <img src="assets/img/project-supply-chain-churn1.jpg" alt="Delivery Performance Dashboard">
+                <span class="project-view-badge top-left">Churn Intelligence</span>
+              </div>
+              <div class="project-view" data-index="1">
+                <img src="assets/img/project-supply-chain-churn2.jpg" alt="Freight Cost Analysis">
+                <span class="project-view-badge top-right">Freight Cost Analysis</span>
+              </div>
+               <div class="project-view" data-index="2">
+                <img src="assets/img/project-supply-chain-churn3.jpg" alt="Global Route Map">
+                <span class="project-view-badge bottom-right">Geospatial Route Map</span>
+              </div>
+              <div class="project-view" data-index="3">
+                <img src="assets/img/project-supply-chain-churn4.jpg" alt="Customer Churn Analysis">
+                <span class="project-view-badge bottom-left">Delivery Performance</span>
+              </div>
+              <div class="project-view" data-index="4">
+                <img src="assets/img/project-supply-chain-churn5.jpg" alt="DAX Action Logic">
+                <span class="project-view-badge top-right">Actionable Logic</span>
+              </div>
+            </div>
+            <button class="project-views-nav project-views-nav-next" aria-label="Next view">&#10095;</button>
+          </div>
+
+          <div class="project-views-dots">
+            <button class="project-views-dot active" data-index="0"></button>
+            <button class="project-views-dot" data-index="1"></button>
+            <button class="project-views-dot" data-index="2"></button>
+            <button class="project-views-dot" data-index="3"></button>
+            <button class="project-views-dot" data-index="4"></button>
+          </div>
+          <p class="project-views-caption">Image <span id="projectViewIndex">1</span> of <span id="projectViewTotal">5</span></p>
+          <div class="project-status-inline">
+            <span class="project-pill pill-success">Completed</span>
+            <span class="badge-original"><span class="dot"></span>Original Content</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="scroll-indicator-wrap">
+    <div class="scroll-mouse" aria-hidden="true">
+      <span class="scroll-wheel"></span>
+    </div>
+  </div>
+
+  <section id="project-preview" class="section project-preview">
+    <div class="container">
+      <div class="project-summary-card dashboard-card">
+        <h2 class="section-title">Supply Chain &amp; Customer Churn Intelligence Dashboard</h2>
+        <div class="dashboard-embed">
+          <div class="badge-original badge-floating badge-floating-outside"><span class="dot"></span>Live Report</div>
+          
+          <iframe title="Supply Chain &amp; Customer Churn Intelligence" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZmZkOTE3ZjgtNmZkZS00MmExLThiMTgtNTk5YmI0ZWZjM2Q0IiwidCI6IjQwMzk2MzNkLWI1YWQtNDFhOS04MjQxLWZjNDNjYWNkYjI1YiJ9&embedImagePlaceholder=true&pageName=a5e67a62e45d0008b80c" frameborder="0" allowfullscreen="true"></iframe>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section project-info">
+    <div class="container">
+      <div class="project-info-card">
+        <div class="project-info-grid">
+
+          <div class="project-info-main">
+            <h2>Case Study: Operations & Retention Engine</h2>
+            
+            <div class="results-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+              <div class="result-item">
+                <h4 style="font-size: 2rem; color: #38bdf8; margin-bottom: 0.2rem;">96.1%</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">On-Time Delivery Rate</p>
+              </div>
+              <div class="result-item">
+                <h4 style="font-size: 2rem; color: #a855f7; margin-bottom: 0.2rem;">Logic</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">Automated Vendor Audit</p>
+              </div>
+              <div class="result-item">
+                <h4 style="font-size: 2rem; color: #34d399; margin-bottom: 0.2rem;">3.03%</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">Freight Cost % Sales</p>
+              </div>
+            </div>
+
+            <p>
+              Managing a global retail operation requires balancing two competing forces: Customer Satisfaction (fast shipping, high retention) and Operational Efficiency (low freight costs, profitable margins). This project bridges the gap between "Sales Data" and "Logistics Performance" using the AdventureWorks dataset.
+            </p>
+
+            <h3>The Challenge</h3>
+            <ul class="project-bullets">
+              <li><strong>High Churn Visibility:</strong> Identifying <em>why</em> customers leave (churn rate: ~3.05%) requires analyzing demographics like occupation and marital status across both Reseller and Internet channels.</li>
+              <li><strong>Freight Cost Leakage:</strong> With total freight costs hitting $1.16M, the business needed to visualize cost-per-order efficiency across global routes (specifically from the Florida hub).</li>
+              <li><strong>Actionable Delays:</strong> Late deliveries (avg 15.65 days) were damaging relationships, but there was no system to correlate these delays with product profitability.</li>
+            </ul>
+
+            <h3>The Solution &amp; Architecture</h3>
+            <ul class="project-bullets">
+              <li><strong>End-to-End Logistics Tracking:</strong> Built a geospatial route map analyzing freight costs from the distribution center to global destinations.</li>
+              <li><strong>Churn Profiling:</strong> Developed distinct dashboards for B2B and B2C churn, identifying high-risk segments (e.g., "Skilled Manual" workers showed higher churn).</li>
+              <li><strong>Prescriptive Analytics:</strong> Instead of just showing "Late Products," I engineered a dynamic measure (`DeliveryAction`) that recommends decisions.</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">Core Business Logic (DAX)</h3>
+            <p style="font-size: 0.95rem; color:#94a3b8; margin-bottom:1rem;">The following measure automates inventory decisions by correlating profitability with logistics performance.</p>
+            
+            <div class="code-window" style="background: #1e1e1e; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; font-family: 'Fira Code', monospace; margin-top: 0.5rem;">
+              <div class="code-header" style="background: #252526; padding: 10px 15px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                 <span class="dot" style="background:#ff5f56; width:10px; height:10px; border-radius:50%;"></span>
+                 <span class="dot" style="background:#ffbd2e; width:10px; height:10px; border-radius:50%;"></span>
+                 <span class="dot" style="background:#27c93f; width:10px; height:10px; border-radius:50%;"></span>
+                 <span class="code-title" style="margin-left: 10px; color: #9ca3af; font-size: 0.85rem;">DeliveryAction_Measure.dax</span>
+              </div>
+              <pre style="margin:0;"><code class="language-vbnet" style="padding: 20px; color: #d4d4d4; display:block; overflow-x: auto; font-size: 0.85rem;">DeliveryAction = 
+IF(
+    NOT(ISBLANK([AvgDays Late])),
+    SWITCH(
+        TRUE(),
+        [Net Profit Margin] < 0.1 && [AvgDays Late] > 15, 
+            "Low Margin and High LD : Delist the Product",
+        
+        [Net Profit Margin] >= 0.1 && [Net Profit Margin] <= 0.3 && [AvgDays Late] > 15, 
+            "Avg Margin and Avg LD : Change Vendor",
+        
+        "Acceptable Late Shipment"
+    ),
+    BLANK()
+)</code></pre>
+            </div>
+          </div>
+
+          <aside class="project-info-sidebar">
+            <div class="info-group">
+              <h4>Key Metrics</h4>
+              <div class="info-pills">
+                <span class="info-pill">Churn Rate</span>
+                <span class="info-pill">Freight Cost</span>
+                <span class="info-pill">On-Time Rate</span>
+                <span class="info-pill">Net Profit Margin</span>
+              </div>
+            </div>
+
+            <div class="info-group">
+              <h4>Dataset &amp; Logic</h4>
+              <ul class="info-list">
+                <li>AdventureWorks Sales & Logistics Data.</li>
+                <li>Reseller vs. Internet Customer Segmentation.</li>
+                <li>Geo-spatial route coordinates (Lat/Long).</li>
+                <li>Dynamic "SWITCH" statements for categorization.</li>
+              </ul>
+            </div>
+
+            <div class="info-group">
+              <h4>Business Value</h4>
+              <ul class="info-list">
+                <li>Reduced manual review of late shipments.</li>
+                <li>Identified vendor renegotiation opportunities.</li>
+                <li>Visualized "cost-to-serve" across global routes.</li>
+                <li>Proactive churn prevention for high-value segments.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-navigation-wrap">
+      <div class="container project-navigation">
+        <a class="project-nav-link prev" href="project-us-trade-tariff.html">
+          <span class="nav-label">← Previous Project</span>
+          <span class="nav-title">US Trade Tariff Impact Analysis</span>
+        </a>
+        <a class="project-nav-link next" href="project-executive-sales-command-center.html">
+          <span class="nav-label">Next Project →</span>
+          <span class="nav-title">Executive Sales Command Center</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Innobi &mdash; Data Engineering &middot; BI &middot; Cloud Architecture</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('dark-icon');
+    const lightIcon = document.getElementById('light-icon');
+    const siteLogo = document.getElementById('site-logo');
+
+    const applyTheme = (theme) => {
+      const isLight = theme === 'light';
+      document.body.classList.toggle('light-theme', isLight);
+
+      if (siteLogo) {
+        siteLogo.src = isLight
+          ? 'assets/img/LightModeLogo.png'
+          : 'assets/img/DarkModeLogo.png';
+      }
+
+      if (isLight) {
+        localStorage.setItem('theme', 'light');
+        darkIcon.classList.remove('hidden');
+        lightIcon.classList.add('hidden');
+      } else {
+        localStorage.setItem('theme', 'dark');
+        darkIcon.classList.add('hidden');
+        lightIcon.classList.remove('hidden');
+      }
+    };
+
+    const storedTheme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+    applyTheme(storedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(nextTheme);
+    });
+
+    // Simple project views slider
+    (function () {
+      const frame = document.querySelector('.project-views-frame');
+      if (!frame) return;
+
+      const slides = Array.from(frame.querySelectorAll('.project-view'));
+      const dots = Array.from(document.querySelectorAll('.project-views-dot'));
+      const prev = document.querySelector('.project-views-nav-prev');
+      const next = document.querySelector('.project-views-nav-next');
+      const indexLabel = document.getElementById('projectViewIndex');
+      const totalLabel = document.getElementById('projectViewTotal');
+
+      let current = 0;
+      let autoTimer = null;
+
+      const showSlide = (index) => {
+        if (!slides.length) return;
+        const total = slides.length;
+        current = (index + total) % total;
+
+        slides.forEach((img, i) => {
+          img.classList.toggle('active', i === current);
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === current);
+        });
+
+        if (indexLabel) {
+          indexLabel.textContent = String(current + 1);
+        }
+        if (totalLabel) {
+          totalLabel.textContent = String(total);
+        }
+      };
+
+      const scheduleAutoAdvance = () => {
+        if (autoTimer) window.clearInterval(autoTimer);
+        autoTimer = window.setInterval(() => {
+          showSlide(current + 1);
+        }, 4000); // 4 saniye yaptım biraz daha yavaş dönsün
+      };
+
+      if (prev) {
+        prev.addEventListener('click', () => showSlide(current - 1));
+      }
+      if (next) {
+        next.addEventListener('click', () => showSlide(current + 1));
+      }
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const idx = Number(dot.dataset.index) || 0;
+          showSlide(idx);
+        });
+      });
+
+      showSlide(0);
+      scheduleAutoAdvance();
+
+      [prev, next, ...dots].forEach((el) => {
+        if (!el) return;
+        el.addEventListener('click', scheduleAutoAdvance);
+      });
+    })();
+  </script>
+
+</body>
+</html>
