@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Executive Sales Command Center | Innobi</title>
+  <title>Smart Warehouse Digital Twin and Restocking Intelligence | Innobi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -102,18 +102,20 @@
       <div class="project-summary-card project-summary-grid">
         <div class="project-summary-main">
           <h1 class="project-title">
-            Executive Sales Command Center
+            Smart Warehouse Digital Twin and Restocking Intelligence
           </h1>
 
           <p class="project-summary-text">
-            An executive-facing command center built on the AdventureWorks dataset to monitor Sales Representative
-            and District Manager performance in real time. It combines revenue, quotes, win–loss ratios and target
-            completion into a single, hierarchy-aware view.
+            A smart warehouse command center that turns the AdventureWorks warehouse into a 3D digital twin.
+            Every aisle, level and bin can be explored in real time while tracking occupancy, inventory value and stock
+            levels, giving operations a spatial view of the warehouse instead of static tables.
           </p>
           <p class="project-summary-text">
-            The solution resolves a long-standing visibility gap: <strong>District Managers both sell and manage teams</strong>.
-            Using advanced DAX path functions, each manager can finally see their own sales, their team’s contribution,
-            and territory-level KPIs in one place, enhanced with ticker-style target completion and what-if simulations.
+            On top of the 3D experience, the solution implements a demand-driven restocking engine and an alerting
+            system. Using the last six months of sales, it classifies each product into stock categories
+            (<strong>New, Unsaleable, Safety, Unsafe, Critical</strong>), calculates an estimated reorder date and
+            automatically sends email &amp; in-app notifications when critical thresholds are reached or occupancy
+            exceeds defined limits.
           </p>
 
           <div class="project-actions">
@@ -140,19 +142,21 @@
             <ul class="project-facts">
               <li>
                 <span class="project-fact-label">Data Domain</span>
-                <span class="project-pill">Sales Performance</span>
-                <span class="project-pill">Territory Management</span>
+                <span class="project-pill">Warehouse Operations</span>
+                <span class="project-pill">Inventory Optimization</span>
+                <span class="project-pill">Procurement</span>
               </li>
               <li>
                 <span class="project-fact-label">Technique</span>
-                <span class="project-pill">Hierarchy Modeling</span>
-                <span class="project-pill pill-success">What-if Simulation</span>
+                <span class="project-pill">3D Digital Twin</span>
+                <span class="project-pill">Restocking Intelligence</span>
+                <span class="project-pill pill-success">Alerts &amp; Notifications</span>
               </li>
               <li>
                 <span class="project-fact-label">Tech Stack</span>
                 <span class="project-pill">Power BI</span>
                 <span class="project-pill">DAX</span>
-                <span class="project-pill">Custom Visuals</span>
+                <span class="project-pill">3D Custom Visuals</span>
               </li>
             </ul>
           </div>
@@ -179,24 +183,24 @@
             <button class="project-views-nav project-views-nav-prev" aria-label="Previous view">&#10094;</button>
             <div class="project-views-frame">
               <div class="project-view active" data-index="0">
-                <img src="assets/img/project-executive-sales-command-center1.jpg" alt="Executive Sales KPI overview">
-                <span class="project-view-badge top-left">Executive KPI Overview</span>
+                <img src="assets/img/project-smart-warehouse1.jpg" alt="3D warehouse digital twin overview">
+                <span class="project-view-badge top-left">3D Digital Twin Overview</span>
               </div>
               <div class="project-view" data-index="1">
-                <img src="assets/img/project-executive-sales-command-center2.jpg" alt="Sales targets and ticker">
-                <span class="project-view-badge top-right">Target Ticker</span>
+                <img src="assets/img/project-smart-warehouse2.jpg" alt="Bin-level inventory breakdown">
+                <span class="project-view-badge top-right">Bin-Level Detail</span>
               </div>
               <div class="project-view" data-index="2">
-                <img src="assets/img/project-executive-sales-command-center3.jpg" alt="Hierarchy PATH modeling in DAX">
-                <span class="project-view-badge bottom-right">Hierarchy PATH Logic</span>
+                <img src="assets/img/project-smart-warehouse3.jpg" alt="Aisle and level focused warehouse scene">
+                <span class="project-view-badge bottom-right">Aisle &amp; Level Focus</span>
               </div>
               <div class="project-view" data-index="3">
-                <img src="assets/img/project-executive-sales-command-center4.jpg" alt="Sales Rep tree and territory map">
-                <span class="project-view-badge bottom-left">Territory &amp; Tree View</span>
+                <img src="assets/img/project-smart-warehouse4.jpg" alt="Product footprint across bins">
+                <span class="project-view-badge bottom-left">Product Footprint</span>
               </div>
               <div class="project-view" data-index="4">
-                <img src="assets/img/project-executive-sales-command-center5.jpg" alt="Win Loss and What-if simulation">
-                <span class="project-view-badge top-right">Win–Loss What-if</span>
+                <img src="assets/img/project-smart-warehouse5.jpg" alt="Restocking logic and stock categories">
+                <span class="project-view-badge top-right">Restocking &amp; Alerts</span>
               </div>
             </div>
             <button class="project-views-nav project-views-nav-next" aria-label="Next view">&#10095;</button>
@@ -230,12 +234,12 @@
   <section id="project-preview" class="section project-preview">
     <div class="container">
       <div class="project-summary-card dashboard-card">
-        <h2 class="section-title">Executive Sales Command Center Dashboard</h2>
+        <h2 class="section-title">Smart Warehouse Digital Twin Dashboard</h2>
         <div class="dashboard-embed">
           <div class="badge-original badge-floating badge-floating-outside"><span class="dot"></span>Live Report</div>
 
-          <iframe title="Executive Sales Command Center" width="600" height="373.5"
-            src="https://app.powerbi.com/view?r=eyJrIjoiNTgzMmM4MzItMDRhOC00OTNlLWE4MjgtZjFiMDkxMTY4NDg5IiwidCI6IjQwMzk2MzNkLWI1YWQtNDFhOS04MjQxLWZjNDNjYWNkYjI1YiJ9&embedImagePlaceholder=true&pageName=acfdaf0fe1df1b4e8630"
+          <iframe title="Smart Warehouse Digital Twin" width="600" height="373.5"
+            src="https://app.powerbi.com/view?r=eyJrIjoiODg5NzMyZjItZGIwNS00Y2Q3LTkyZjQtNmU3NDFjZTk2MmEzIiwidCI6IjQwMzk2MzNkLWI1YWQtNDFhOS04MjQxLWZjNDNjYWNkYjI1YiJ9&embedImagePlaceholder=true&pageName=1a377a915f6f6c629f78"
             frameborder="0" allowfullscreen="true"></iframe>
 
         </div>
@@ -249,68 +253,73 @@
         <div class="project-info-grid">
 
           <div class="project-info-main">
-            <h2>Case Study: Sales Hierarchy & Target Intelligence</h2>
+            <h2>Case Study: Smart Warehouse Digital Twin &amp; Restocking Intelligence</h2>
 
             <div class="results-grid"
-              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
               <div class="result-item">
-                <h4 style="font-size: 2rem; color: #38bdf8; margin-bottom: 0.2rem;">$38.29M</h4>
-                <p style="font-size: 0.9rem; color: #94a3b8;">Net Sales (CY 2013)</p>
+                <h4 style="font-size: 2rem; color: #38bdf8; margin-bottom: 0.2rem;">1,380</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">Total Bins</p>
               </div>
               <div class="result-item">
-                <h4 style="font-size: 2rem; color: #a855f7; margin-bottom: 0.2rem;">43.25%</h4>
-                <p style="font-size: 0.9rem; color: #94a3b8;">Win–Loss Ratio</p>
+                <h4 style="font-size: 2rem; color: #f97316; margin-bottom: 0.2rem;">93.33%</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">Occupancy Rate</p>
               </div>
               <div class="result-item">
-                <h4 style="font-size: 2rem; color: #34d399; margin-bottom: 0.2rem;">47.58%</h4>
-                <p style="font-size: 0.9rem; color: #94a3b8;">What-if Win–Loss Scenario</p>
+                <h4 style="font-size: 2rem; color: #22c55e; margin-bottom: 0.2rem;">$29.2M</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">Inventory Value</p>
+              </div>
+              <div class="result-item">
+                <h4 style="font-size: 2rem; color: #a855f7; margin-bottom: 0.2rem;">842K</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">Inventory Stock Quantity</p>
               </div>
             </div>
 
             <p>
-              Sales executives and territory leaders needed a single place to understand who is really driving revenue:
-              individual Sales Reps, District Managers, or specific territories. The existing reports showed totals,
-              but they couldn’t fairly attribute performance where managers both sold and managed teams.
+              Warehouse operations and procurement teams needed more than a table of stock numbers. They wanted to see
+              how full the warehouse really is, where products physically live, and which items require attention
+              before they become a problem. Previous reports showed totals, but gave no spatial context and no
+              restocking guidance.
             </p>
 
             <p>
-              The <strong>Executive Sales Command Center</strong> links Net Sales, quotes, win–loss ratios, sales
-              targets and bike-specific goals into a command-style dashboard. A custom ticker visual highlights
-              over- and under-performing reps, while a hierarchical model ensures District Managers see both their own
-              sales and the contribution of every rep reporting to them.
+              The <strong>Smart Warehouse Digital Twin and Restocking Intelligence</strong> solution delivers a 3D,
+              bin-level view of the warehouse combined with a replenishment engine. Users can zoom into aisles and
+              levels, inspect individual bins, and instantly understand occupancy and inventory value. At the same time,
+              DAX-based measures compute safety stock, stock categories and estimated reorder dates, while an alerting
+              layer sends email and in-app notifications when critical thresholds are breached.
             </p>
 
             <h3>The Challenge</h3>
             <ul class="project-bullets">
-              <li><strong>Hierarchical ambiguity:</strong> District Managers act as sellers and leaders, but legacy
-                reports treated them like ordinary reps, hiding their team’s impact and making their KPIs misleading.</li>
-              <li><strong>Target tracking:</strong> Each year the business sets a global revenue target and a dedicated
-                bike sales target, but there was no visual way to see real-time progress by manager or rep.</li>
-              <li><strong>What-if analysis:</strong> Leadership wanted to answer questions like
-                <em>“What if Amy increases her win rate by 10%?”</em> and measure the upside without exporting to Excel.
-              </li>
+              <li><strong>No spatial visibility:</strong> Ops teams could not answer simple questions such as
+                “Where is this product located?” or “Which aisles are under- or over-utilized?”</li>
+              <li><strong>Manual restocking decisions:</strong> Reorder timing was driven by gut feel and occasional
+                Excel extracts rather than recent demand and safety stock calculations.</li>
+              <li><strong>Late reaction to risk:</strong> There were no automatic alerts when inventory dropped into
+                critical zones or when warehouse occupancy exceeded safe limits.</li>
             </ul>
 
             <h3>The Solution &amp; Architecture</h3>
             <ul class="project-bullets">
-              <li><strong>PATH-based hierarchy modeling:</strong> Using <code>PATH</code>, <code>PATHLENGTH</code> and
-                <code>PATHITEM</code>, I built a robust employee path that understands the full chain from CEO down to
-                Sales Rep.</li>
-              <li><strong>Lookup-based level names:</strong> Additional calculated columns (Level1–Level5) and
-                <code>LOOKUPVALUE</code> map each employee to their District Manager and role, enabling slicers such as
-                “Territory Mng &amp; Sales Rep”.</li>
-              <li><strong>Targets + ticker:</strong> A scroller-style custom visual shows sales target completion and
-                bike target completion in a continuous marquee, giving executives a quick read of who is ahead or
-                behind.</li>
-              <li><strong>Win–loss what-if:</strong> A parameterized what-if slider recalculates potential Net Sales
-                assuming improved win–loss ratios, helping leadership simulate the impact of coaching or territory
-                changes.</li>
+              <li><strong>3D warehouse digital twin:</strong> A custom 3D visual renders the warehouse with aisles,
+                levels and bins. Filters allow narrowing down to specific product categories, products, aisles and
+                levels while all KPIs recalculate in real time.</li>
+              <li><strong>Bin-level inventory measures:</strong> DAX measures such as <em>Inventory Stock Quantity</em>,
+                <em>Occupancy Rate</em> and <em>Inventory Value</em> are computed at bin, aisle and level granularity,
+                providing a clear picture of how space and capital are used.</li>
+              <li><strong>Demand-driven restocking engine:</strong> Using the last 6 months of sales, the model
+                calculates safety stock ratios, classifies items into stock categories (New, Unsaleable, Safety, Unsafe,
+                Critical) and derives an <em>Estimated Reorder Date</em> per product.</li>
+              <li><strong>Alerting system:</strong> When products fall into <em>Critical</em> or <em>Unsafe</em> stock
+                categories, or when overall occupancy crosses configured thresholds, the system triggers email and
+                notification alerts so warehouse and procurement teams can react immediately.</li>
             </ul>
 
-            <h3 style="margin-top: 2rem;">Core Hierarchy Logic (DAX)</h3>
+            <h3 style="margin-top: 2rem;">Core Restocking &amp; Reorder Logic (DAX)</h3>
             <p style="font-size: 0.95rem; color:#94a3b8; margin-bottom:1rem;">
-              The following DAX pattern builds the employee hierarchy path and exposes District Manager names for use in
-              visuals and slicers.
+              The following DAX pattern powers the stock categorisation and estimated reorder date logic used in the
+              restocking dashboard and alerting rules.
             </p>
 
             <div class="code-window"
@@ -321,36 +330,68 @@
                 <span class="dot" style="background:#ffbd2e; width:10px; height:10px; border-radius:50%;"></span>
                 <span class="dot" style="background:#27c93f; width:10px; height:10px; border-radius:50%;"></span>
                 <span class="code-title" style="margin-left: 10px; color: #9ca3af; font-size: 0.85rem;">
-                  EmployeeHierarchy.dax
+                  RestockingLogic.dax
                 </span>
               </div>
-              <pre style="margin:0;"><code class="language-vbnet" style="padding: 20px; color: #d4d4d4; display:block; overflow-x: auto; font-size: 0.85rem;">EmployeePath =
-PATH (
-    DimEmployee[EmployeeKey],
-    DimEmployee[ParentEmployeeKey]
+              <pre style="margin:0;"><code class="language-vbnet" style="padding: 20px; color: #d4d4d4; display:block; overflow-x: auto; font-size: 0.85rem;">// 1- Total inventory units currently stored in bins
+Inventory Stock Quantity =
+SUM ( Inventory[UnitsPlaced] )
+
+// 2- Total product quantity sold in the last 6 months
+Last 6M Product Count =
+VAR Last6MonthsDate =
+    [Last 6 Month Date]      // e.g. 30 June 2013
+VAR TodayDate =
+    [Today]                  // e.g. 31 December 2013
+RETURN
+CALCULATE (
+    [Product Count],         // total units sold for the product
+    vFactSales[OrderDate] &gt;= Last6MonthsDate,
+    vFactSales[OrderDate] &lt;= TodayDate
 )
 
-EmployeeLevel =
-PATHLENGTH ( DimEmployee[EmployeePath] )
+// 3- Safety stock ratio: how many 6-month demand periods
+// are currently sitting in inventory
+Safety Stock =
+DIVIDE ( [Inventory Stock Quantity], [Last 6M Product Count], BLANK () )
 
-DistrictManagerName =
-VAR Level4Key =
-    PATHITEM ( DimEmployee[EmployeePath], 4, INTEGER )
-RETURN
+// 4- Stock segmentation used for restocking decisions
+Stock Category =
+SWITCH (
+    TRUE (),
+    ISBLANK ( Bin[Last Order Date] )
+        &amp;&amp; ISBLANK ( Bin[Safety Stock] ), "New Product",
+    ISBLANK ( Bin[Safety Stock] ),          "Unsaleable Product",
+    Bin[Safety Stock] &gt; 1,                  "Safety Stock",
+    Bin[Safety Stock] &gt;= 0.5
+        &amp;&amp; Bin[Safety Stock] &lt;= 1,          "Unsafe Stock",
+    Bin[Safety Stock] &lt; 0.5,                "Critical Stock Item",
+    "Unknown"
+)
+
+// 5- Average daily demand in the last 6 months
+Average Daily Demand 6M =
+DIVIDE ( [Last 6M Product Count], 180 )
+
+// 6- How many days the current inventory will last
+// at the recent demand rate
+Additional Day =
+DIVIDE ( [Inventory Stock Quantity], [Average Daily Demand 6M], BLANK () )
+
+// 7- Estimated reorder date based on current stock and demand.
+// If we cannot compute additional days, show the stock category instead.
+Estimated Reorder Date =
 IF (
-    DimEmployee[EmployeeLevel] = 3
-        && DimEmployee[DepartmentName] = "Sales",
-    LOOKUPVALUE (
-        DimEmployee[Full Employee Name],
-        DimEmployee[EmployeeKey], Level4Key
-    )
+    ISBLANK ( [Additional Day] ),
+    MAX ( 'vDimProduct'[Stock Category] ),
+    [Today] + [Additional Day]
 )</code></pre>
             </div>
 
             <p style="font-size: 0.9rem; color:#94a3b8; margin-top:1rem;">
-              This approach lets District Managers appear both as individual sellers and as the parent node for their
-              team, ensuring that KPIs like Net Sales and Win–Loss are correctly rolled up in visuals such as tree
-              maps, Sankey charts and matrix views.
+              These measures feed both the restocking table view and the alerting rules. Critical and Unsafe stock
+              categories, combined with near-term reorder dates, are used to drive targeted notifications to warehouse
+              supervisors and buyers.
             </p>
 
           </div>
@@ -359,32 +400,33 @@ IF (
             <div class="info-group">
               <h4>Key Metrics</h4>
               <div class="info-pills">
-                <span class="info-pill">Net Sales</span>
-                <span class="info-pill">Quotes</span>
-                <span class="info-pill">Win–Loss Ratio</span>
-                <span class="info-pill">Target Completion</span>
-                <span class="info-pill">Bike Sales Target</span>
+                <span class="info-pill">Total Bins</span>
+                <span class="info-pill">Empty / Full Bins</span>
+                <span class="info-pill">Occupancy Rate</span>
+                <span class="info-pill">Inventory Value</span>
+                <span class="info-pill">Inventory Stock Quantity</span>
               </div>
             </div>
 
             <div class="info-group">
               <h4>Dataset &amp; Logic</h4>
               <ul class="info-list">
-                <li>AdventureWorks Sales &amp; Employee tables.</li>
-                <li>Parent–child employee hierarchy with PATH.</li>
-                <li>Level-based columns (CEO → District Manager → Sales Rep).</li>
-                <li>What-if parameter for Win–Loss improvement.</li>
-                <li>Custom ticker extension for target completion.</li>
+                <li>Warehouse locations by aisle, level and bin.</li>
+                <li>Inventory placements linked to AdventureWorks products.</li>
+                <li>Sales history used to compute last 6-month demand.</li>
+                <li>DAX measures for safety stock, stock category and reorder dates.</li>
+                <li>Alert thresholds for occupancy and stock category-based notifications.</li>
               </ul>
             </div>
 
             <div class="info-group">
               <h4>Business Value</h4>
               <ul class="info-list">
-                <li>Gives executives a true “command center” view of sales performance.</li>
-                <li>Correctly attributes revenue to both managers and individual reps.</li>
-                <li>Enables territory and coaching decisions via what-if simulations.</li>
-                <li>Reveals which leaders consistently exceed revenue and bike targets.</li>
+                <li>Gives warehouse teams a spatial, 3D view of inventory instead of static screens.</li>
+                <li>Supports forklift routing and reduces travel time by pinpointing exactly where stock sits.</li>
+                <li>Helps procurement prioritise Critical and Unsafe Stock items with clear reorder dates.</li>
+                <li>Protects working capital by highlighting Unsaleable and slow-moving items.</li>
+                <li>Alerting ensures that occupancy and stock risks are surfaced automatically, not discovered by accident.</li>
               </ul>
             </div>
           </aside>
@@ -394,13 +436,9 @@ IF (
 
     <div class="project-navigation-wrap">
       <div class="container project-navigation">
-        <a class="project-nav-link prev" href="project-supply-chain-churn.html">
+        <a class="project-nav-link prev" href="project-executive-sales-command-center.html">
           <span class="nav-label">← Previous Project</span>
-          <span class="nav-title">Supply Chain &amp; Customer Churn Intelligence</span>
-        </a>
-        <a class="project-nav-link next" href="project-smart-warehouse.html">
-          <span class="nav-label">Next Project →</span>
-          <span class="nav-title">Smart Warehouse Digital Twin</span>
+          <span class="nav-title">Executive Sales Command Center</span>
         </a>
       </div>
     </div>
