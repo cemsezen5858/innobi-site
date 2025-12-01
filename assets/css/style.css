@@ -49,16 +49,36 @@ body.light-theme .theme-toggle-btn:hover {
 }
 
 body.light-theme .dropdown-panel {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 20px 45px rgba(15,23,42,0.18);
 }
 
-body.light-theme .dropdown-panel a {
-  color: #374151;
+body.light-theme .dropdown-category-header {
+  color: #0f172a;
 }
 
-body.light-theme .dropdown-panel a:hover {
-  background: rgba(0,0,0,0.05);
+body.light-theme .dropdown-category-header small {
+  color: #475569;
+}
+
+body.light-theme .dropdown-item {
+  background: rgba(15,23,42,0.04);
+  border-color: rgba(15,23,42,0.05);
+}
+
+body.light-theme .dropdown-item-title {
+  color: #0f172a;
+}
+
+body.light-theme .dropdown-item-meta {
+  color: #475569;
+}
+
+body.light-theme .dropdown-item:hover {
+  background: rgba(59,130,246,0.08);
+  border-color: rgba(59,130,246,0.2);
+  box-shadow: 0 12px 24px rgba(59,130,246,0.18);
 }
 
 body.light-theme .hero-text h1 {
@@ -1267,34 +1287,101 @@ body.light-theme .info-pill {
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(10, 15, 29, 0.9);
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  padding: 1.25rem 1.4rem;
+  background: radial-gradient(circle at top, rgba(56,189,248,0.1), transparent 70%),
+              radial-gradient(circle at bottom, rgba(147,51,234,0.12), transparent 65%),
+              rgba(5,10,22,0.92);
+  border-radius: 16px;
+  border: 1px solid rgba(148,163,184,0.35);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 25px 50px rgba(3,7,18,0.55);
   z-index: 100;
-  min-width: 200px;
+  min-width: 320px;
 }
 
 .dropdown:hover .dropdown-panel {
   display: block;
 }
 
-.dropdown-panel a {
+.dropdown-category {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.dropdown-category + .dropdown-category {
+  margin-top: 1.2rem;
+}
+
+.dropdown-category-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  align-items: flex-start;
+  padding: 0.35rem 0.25rem;
+  border: none;
+  background: transparent;
+  text-align: left;
+  color: #f8fbff;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.dropdown-category-header small {
+  color: #94a7c6;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: none;
+}
+
+.dropdown-category-header:hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(56,189,248,0.7);
+}
+
+.dropdown-links {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.dropdown-item {
   display: block;
-  padding: 0.5rem 1rem;
-  color: #cbd5e1;
+  padding: 0.65rem 0.75rem;
+  border-radius: 12px;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.02);
-  transition: background 0.2s ease;
+  background: rgba(15,23,42,0.35);
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
 }
 
-.dropdown-panel a:hover {
-  background: rgba(255,255,255,0.05);
+.dropdown-item:hover {
+  border-color: rgba(94,181,249,0.6);
+  box-shadow: 0 8px 24px rgba(59,130,246,0.35);
+  background: rgba(15,23,42,0.6);
 }
 
-.dropdown-panel a:last-child {
-  border-bottom: none;
+.dropdown-item-title {
+  display: block;
+  color: #f1f5ff;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.dropdown-item-meta {
+  display: block;
+  color: #8ea2c9;
+  font-size: 0.78rem;
+}
+
+.dropdown-separator {
+  height: 1px;
+  margin: 1.1rem 0 1rem;
+  background: linear-gradient(90deg, rgba(56,189,248,0.2), rgba(147,51,234,0.5), rgba(56,189,248,0.2));
+  border: none;
 }
 
 /* =======================================================
@@ -2177,11 +2264,206 @@ body.light-theme .skills-radar-label {
   /* =======================================================
      PROJECTS POPUP (PREMIUM)
   ======================================================= */
+  .projects-tab-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects-tab-bar {
+    position: relative;
+    display: inline-flex;
+    gap: 1.2rem;
+    padding: 0.35rem;
+    border-radius: 999px;
+    background: rgba(15,23,42,0.55);
+    border: 1px solid rgba(148,163,184,0.25);
+    box-shadow: 0 10px 35px rgba(2,12,27,0.45);
+    backdrop-filter: blur(18px);
+  }
+
+  .project-tab {
+    position: relative;
+    z-index: 2;
+    border: none;
+    background: transparent;
+    border-radius: 999px;
+    padding: 0.75rem 1.8rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #b8cdfd;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .project-tab:hover {
+    color: #e2e8ff;
+  }
+
+  .project-tab.active {
+    color: #ffffff;
+    text-shadow: 0 0 18px rgba(255,255,255,0.75);
+  }
+
+  .project-tab:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(56,189,248,0.6);
+  }
+
+  .projects-tab-bar .tab-indicator {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 0;
+    width: 50%;
+    border-radius: 999px;
+    background: linear-gradient(120deg, rgba(56,189,248,0.95), rgba(147,51,234,0.9));
+    box-shadow: 0 8px 25px rgba(56,189,248,0.4), 0 0 35px rgba(147,51,234,0.35);
+    transition: transform 0.35s ease, width 0.35s ease, opacity 0.35s ease;
+    z-index: 1;
+    transform: translateX(0);
+  }
+
+  .projects-panels {
+    position: relative;
+  }
+
+  .projects-panel {
+    display: none;
+    animation: panelFade 0.5s ease forwards;
+  }
+
+  .projects-panel.active {
+    display: block;
+  }
+
+  @keyframes panelFade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   .projects-popup {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.2rem;
     margin-top: 3rem;
+  }
+
+  .ops-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .ops-card {
+    position: relative;
+    padding: 2rem;
+    border-radius: 26px;
+    background: radial-gradient(circle at top, rgba(56,189,248,0.12), transparent 60%),
+                radial-gradient(circle at bottom right, rgba(147,51,234,0.14), transparent 55%),
+                rgba(15,23,42,0.75);
+    border: 1px solid rgba(148,163,184,0.25);
+    box-shadow: 0 25px 45px rgba(3,7,18,0.55);
+    backdrop-filter: blur(18px);
+    min-height: 280px;
+  }
+
+  .ops-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(59,130,246,0.15);
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+
+  .ops-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .ops-card p {
+    color: #b6c6e8;
+    margin-bottom: 1rem;
+  }
+
+  .ops-card ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .ops-card ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #d7e3ff;
+    font-size: 0.95rem;
+  }
+
+  .ops-card ul li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, #38bdf8, #a855f7);
+    box-shadow: 0 0 8px rgba(168,85,247,0.7);
+  }
+
+  .ops-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .ops-pill {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(59,130,246,0.15);
+    border: 1px solid rgba(59,130,246,0.35);
+  }
+
+  .ops-meta {
+    font-size: 0.85rem;
+    color: #9fb3d4;
+  }
+
+  body.light-theme .projects-tab-bar {
+    background: rgba(255,255,255,0.8);
+    border-color: rgba(15,23,42,0.1);
+    box-shadow: 0 12px 30px rgba(15,23,42,0.12);
+  }
+
+  body.light-theme .project-tab {
+    color: #475569;
+  }
+
+  body.light-theme .project-tab.active {
+    color: #0f172a;
+  }
+
+  body.light-theme .ops-card {
+    background: rgba(255,255,255,0.9);
+    border-color: rgba(15,23,42,0.08);
+    box-shadow: 0 20px 35px rgba(15,23,42,0.08);
+  }
+
+  body.light-theme .ops-card h3 {
+    color: #0f172a;
+  }
+
+  body.light-theme .ops-card p,
+  body.light-theme .ops-card ul li {
+    color: #1e293b;
   }
 
 .popup-card {
