@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Innobi Fiscra | Native iOS Receipt & Expense Intelligence | Innobi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+  <script>
+    // Apply stored theme immediately to avoid background flicker when navigating from dropdown
+    (function () {
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+      }
+    })();
+  </script>
+
+  <div class="bg-layers">
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-dots"></div>
+  </div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">
+        <img src="assets/img/DarkModeLogo.png" class="logo-img" id="site-logo" alt="Innobi logo">
+      </div>
+
+      <nav class="nav-menu">
+        <a href="index.html#home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9,22 9,12 15,12 15,22"></polyline>
+          </svg>
+          Home
+        </a>
+        <a href="index.html#about">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          About
+        </a>
+
+        <div class="dropdown">
+          <a href="index.html#projects" class="dropdown-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14.5 2L20 7.5V8H14.5z" />
+              <path d="M16 13H8" />
+              <path d="M16 17H8" />
+              <path d="M10 9H8" />
+            </svg>
+            Projects &#9662;
+          </a>
+          <div class="dropdown-panel">
+            <div class="dropdown-category">
+              <button class="dropdown-category-header" type="button" data-tab-target="analytics">
+                <span>BI &amp; Analytics Platforms</span>
+                <small>Production-grade dashboards &amp; AWS data fabric</small>
+              </button>
+              <div class="dropdown-links">
+                <a href="project-us-trade-tariff.html" class="dropdown-item">
+                  <span class="dropdown-item-title">US Trade Tariff Impact Analysis</span>
+                  <span class="dropdown-item-meta">AWS, Power BI, Tariff intelligence</span>
+                </a>
+                <a href="project-supply-chain-churn.html" class="dropdown-item">
+                  <span class="dropdown-item-title">Supply Chain &amp; Customer Churn Intelligence</span>
+                  <span class="dropdown-item-meta">Logistics &amp; retention signals</span>
+                </a>
+                <a href="project-executive-sales-command-center.html" class="dropdown-item">
+                  <span class="dropdown-item-title">Executive Sales Command Center</span>
+                  <span class="dropdown-item-meta">Revenue KPIs, hierarchy aware</span>
+                </a>
+                <a href="project-smart-warehouse.html" class="dropdown-item">
+                  <span class="dropdown-item-title">Smart Warehouse Digital Twin</span>
+                  <span class="dropdown-item-meta">3D ops, alerts, restocking</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="dropdown-separator"></div>
+
+            <div class="dropdown-category">
+              <button class="dropdown-category-header" type="button" data-tab-target="operations">
+                <span>Operational &amp; Web Systems</span>
+                <small>Portals, automation suites, and UX frameworks</small>
+              </button>
+              <div class="dropdown-links">
+                <a href="project-opscore.html" class="dropdown-item">
+                  <span class="dropdown-item-title">Innobi OpsCore Platform</span>
+                  <span class="dropdown-item-meta">ERP suite &amp; approvals</span>
+                </a>
+                <a href="project-vocacademy.html" class="dropdown-item">
+                  <span class="dropdown-item-title">VocAcademy Learning Ecosystem</span>
+                  <span class="dropdown-item-meta">Gamified language learning suite</span>
+                </a>
+                <!-- (Optional) If you want Fiscra here too, uncomment:
+                <a href="project-fiscra.html" class="dropdown-item">
+                  <span class="dropdown-item-title">Innobi Fiscra</span>
+                  <span class="dropdown-item-meta">iOS receipt intelligence</span>
+                </a>
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="index.html#contact">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Contact
+        </a>
+
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="theme-icon" id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="theme-icon hidden" id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section project-summary">
+    <div class="container">
+      <div class="project-summary-card project-summary-grid">
+        <div class="project-summary-main">
+          <h1 class="project-title">
+            Innobi Fiscra : Native iOS Receipt &amp; Expense Intelligence
+          </h1>
+
+          <p class="project-summary-text">
+            <strong>Innobi Fiscra</strong> is a fully native Swift iOS app that turns real-world receipts and invoices
+            into structured, tax-ready expense records. It is designed for fast capture, reliable parsing, and a
+            review-first workflow: users scan a receipt, confirm extracted fields, and store everything in a clean,
+            searchable archive.
+          </p>
+
+          <p class="project-summary-text">
+            The product focus is accuracy + trust: Fiscra uses a multi-stage extraction approach (on-device OCR first,
+            AI-assisted structuring when needed, and explicit user confirmation). The UI is SwiftUI-first, optimized for
+            quick edits, and built for practical personal finance and CRA-style expense tracking scenarios.
+          </p>
+
+          <div class="project-actions">
+            <a href="https://github.com/salihsezen/Fiscra" class="btn-secondary project-action-btn" target="_blank" rel="noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              View Code
+            </a>
+
+            <a href="#" class="btn-secondary project-action-btn" target="_blank" rel="noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              Launch App
+            </a>
+          </div>
+
+          <div class="project-summary-facts">
+            <ul class="project-facts">
+              <li>
+                <span class="project-fact-label">Domain</span>
+                <span class="project-pill">Expense Tracking</span>
+                <span class="project-pill">Receipt Management</span>
+                <span class="project-pill">Tax-Ready Records</span>
+              </li>
+              <li>
+                <span class="project-fact-label">Technique</span>
+                <span class="project-pill">On-Device Vision OCR</span>
+                <span class="project-pill">AI Fallback Structuring</span>
+                <span class="project-pill">Review-First Confirmation</span>
+                <span class="project-pill pill-success">Confidence Scoring</span>
+              </li>
+              <li>
+                <span class="project-fact-label">Tech Stack</span>
+                <span class="project-pill">Swift</span>
+                <span class="project-pill">SwiftUI</span>
+                <span class="project-pill">Apple Vision</span>
+                <span class="project-pill">Local Storage (Core Data)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="project-summary-meta">
+          <div class="project-views-header">
+            <div class="project-views-title-row">
+              <div class="project-views-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="project-views-title">Project Views</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-views-slider">
+            <button class="project-views-nav project-views-nav-prev" aria-label="Previous view">&#10094;</button>
+            <div class="project-views-frame">
+              <div class="project-view active" data-index="0">
+                <img src="assets/img/project-Fiscra-1.jpeg" alt="Fiscra - Capture receipt">
+                <span class="project-view-badge top-left">Capture Receipt</span>
+              </div>
+              <div class="project-view" data-index="1">
+                <img src="assets/img/project-Fiscra-2.jpeg" alt="Fiscra - OCR preview">
+                <span class="project-view-badge top-right">OCR Preview</span>
+              </div>
+              <div class="project-view" data-index="2">
+                <img src="assets/img/project-Fiscra-3.jpeg" alt="Fiscra - Field extraction & confirmation">
+                <span class="project-view-badge bottom-right">Extracted Fields Review</span>
+              </div>
+              <div class="project-view" data-index="3">
+                <img src="assets/img/project-Fiscra-4.jpeg" alt="Fiscra - Expense categorization">
+                <span class="project-view-badge bottom-left">Categorization</span>
+              </div>
+              <div class="project-view" data-index="4">
+                <img src="assets/img/project-Fiscra-5.jpeg" alt="Fiscra - Receipt archive & search">
+                <span class="project-view-badge top-right">Receipt Archive</span>
+              </div>
+              <div class="project-view" data-index="5">
+                <img src="assets/img/project-Fiscra-6.jpeg" alt="Fiscra - Multi-currency receipt">
+                <span class="project-view-badge bottom-right">Multi-Currency</span>
+              </div>
+              <div class="project-view" data-index="6">
+                <img src="assets/img/project-Fiscra-7.jpeg" alt="Fiscra - Confidence scoring & review">
+                <span class="project-view-badge top-left">Confidence Scoring</span>
+              </div>
+              <div class="project-view" data-index="7">
+                <img src="assets/img/project-Fiscra-8.jpeg" alt="Fiscra - Offline capture queue">
+                <span class="project-view-badge top-right">Offline Queue</span>
+              </div>
+              <div class="project-view" data-index="8">
+                <img src="assets/img/project-Fiscra-9.jpeg" alt="Fiscra - Categorized expense detail">
+                <span class="project-view-badge bottom-left">Expense Detail</span>
+              </div>
+              <div class="project-view" data-index="9">
+                <img src="assets/img/project-Fiscra-10.jpeg" alt="Fiscra - Export-ready summary">
+                <span class="project-view-badge top-left">Export Summary</span>
+              </div>
+            </div>
+            <button class="project-views-nav project-views-nav-next" aria-label="Next view">&#10095;</button>
+          </div>
+
+          <div class="project-views-dots">
+            <button class="project-views-dot active" data-index="0"></button>
+            <button class="project-views-dot" data-index="1"></button>
+            <button class="project-views-dot" data-index="2"></button>
+            <button class="project-views-dot" data-index="3"></button>
+            <button class="project-views-dot" data-index="4"></button>
+            <button class="project-views-dot" data-index="5"></button>
+            <button class="project-views-dot" data-index="6"></button>
+            <button class="project-views-dot" data-index="7"></button>
+            <button class="project-views-dot" data-index="8"></button>
+            <button class="project-views-dot" data-index="9"></button>
+          </div>
+          <p class="project-views-caption">Image <span id="projectViewIndex">1</span> of
+            <span id="projectViewTotal">10</span>
+          </p>
+
+          <div class="project-status-inline">
+            <span class="project-pill pill-success">In Progress (Native MVP)</span>
+            <span class="badge-original"><span class="dot"></span>Original Content</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="scroll-indicator-wrap">
+    <div class="scroll-mouse" aria-hidden="true">
+      <span class="scroll-wheel"></span>
+    </div>
+  </div>
+
+  <section class="section project-info">
+    <div class="container">
+      <div class="project-info-card">
+        <div class="project-info-grid">
+
+          <div class="project-info-main">
+            <h2>Case Study: Innobi Fiscra — Native Receipt-to-Record Pipeline</h2>
+
+            <div class="results-grid"
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+              <div class="result-item">
+                <h4 style="font-size: 2rem; color: #38bdf8; margin-bottom: 0.2rem;">3-Tier</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">Extraction Pipeline</p>
+              </div>
+              <div class="result-item">
+                <h4 style="font-size: 2rem; color: #f97316; margin-bottom: 0.2rem;">On-Device</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">OCR First Pass</p>
+              </div>
+              <div class="result-item">
+                <h4 style="font-size: 2rem; color: #22c55e; margin-bottom: 0.2rem;">Review</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">User Confirmation Flow</p>
+              </div>
+              <div class="result-item">
+                <h4 style="font-size: 2rem; color: #a855f7; margin-bottom: 0.2rem;">iOS</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">SwiftUI Native UX</p>
+              </div>
+            </div>
+
+            <p>
+              Receipt capture is deceptively hard: vendors print inconsistently, tax formats vary, and OCR confidence can
+              drop quickly on tilted, wrinkled, or low-contrast scans. For a finance app, the real problem is not
+              “extracting text” — it is producing a <strong>trustworthy, user-verifiable record</strong> that can stand
+              up in real expense tracking workflows.
+            </p>
+
+            <p>
+              <strong>Innobi Fiscra</strong> addresses this with a pragmatic approach: on-device Vision OCR as the fast
+              default, AI-assisted structuring when needed, and a clear confirmation UI before anything is saved. The
+              result is a clean pipeline from receipt photo → extracted fields → categorized expense entry → searchable
+              archive, built as a portfolio-grade native iOS product.
+            </p>
+
+            <h3>The Challenge</h3>
+            <ul class="project-bullets">
+              <li><strong>Inconsistent receipt layouts:</strong> Vendor formats vary widely, making naive regex parsing
+                unreliable.</li>
+              <li><strong>Accuracy vs. speed tradeoff:</strong> Users want instant results, but finance records require
+                verification and consistency.</li>
+              <li><strong>Trust &amp; explainability:</strong> Any AI-assisted extraction must be reviewable and editable
+                before saving.</li>
+            </ul>
+
+            <h3>The Solution &amp; Architecture</h3>
+            <ul class="project-bullets">
+              <li><strong>Tier 1 (Local OCR):</strong> Apple Vision text recognition extracts raw text quickly on-device.</li>
+              <li><strong>Tier 2 (AI Structuring):</strong> Optional AI step converts OCR text into structured fields
+                (vendor, date, subtotal, tax, total, receipt number) with a confidence signal.</li>
+              <li><strong>Tier 3 (User Confirmation):</strong> Review-first UI lets users edit fields and confirm before
+                committing to storage.</li>
+              <li><strong>Offline-first capture:</strong> Photos and draft records can be created without network;
+                enrichment can run later.</li>
+              <li><strong>Searchable archive:</strong> Receipts become normalized records that can be filtered and
+                exported as summaries.</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">Swift Parsing Model (Receipt Fields)</h3>
+            <p style="font-size: 0.95rem; color:#94a3b8; margin-bottom:1rem;">
+              A small domain model keeps OCR and AI results aligned with an explicit “user-confirmed” state.
+            </p>
+
+            <div class="code-window"
+              style="background: #1e1e1e; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; font-family: 'Fira Code', monospace; margin-top: 0.5rem;">
+              <div class="code-header"
+                style="background: #252526; padding: 10px 15px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <span class="dot" style="background:#ff5f56; width:10px; height:10px; border-radius:50%;"></span>
+                <span class="dot" style="background:#ffbd2e; width:10px; height:10px; border-radius:50%;"></span>
+                <span class="dot" style="background:#27c93f; width:10px; height:10px; border-radius:50%;"></span>
+                <span class="code-title" style="margin-left: 10px; color: #9ca3af; font-size: 0.85rem;">
+                  ReceiptRecord.swift
+                </span>
+              </div>
+              <pre style="margin:0;"><code class="language-swift" style="padding: 20px; color: #d4d4d4; display:block; overflow-x: auto; font-size: 0.85rem;">import Foundation
+
+struct ReceiptRecord: Identifiable, Codable {
+  let id: UUID
+  var vendorName: String
+  var vendorAddress: String?
+  var transactionDate: Date?
+  var receiptNumber: String?
+
+  var subtotal: Decimal?
+  var taxAmount: Decimal?
+  var totalAmount: Decimal?
+
+  // Raw OCR text retained for explainability / re-parsing
+  var ocrText: String
+
+  // Pipeline signals
+  var extractionTier: ExtractionTier
+  var confidenceScore: Double // 0.0 - 1.0
+  var isUserConfirmed: Bool
+}
+
+enum ExtractionTier: String, Codable {
+  case tier1VisionOCR
+  case tier2AIStructuring
+  case manualOnly
+}</code></pre>
+            </div>
+
+            <p style="font-size: 0.9rem; color:#94a3b8; margin-top:1rem;">
+              This model supports a transparent pipeline: store OCR text, surface confidence, and require confirmation
+              before finalizing the record.
+            </p>
+
+          </div>
+
+          <aside class="project-info-sidebar">
+            <div class="info-group">
+              <h4>Key Capabilities</h4>
+              <div class="info-pills">
+                <span class="info-pill">Receipt Capture</span>
+                <span class="info-pill">Vision OCR (On-Device)</span>
+                <span class="info-pill">AI Field Extraction (Optional)</span>
+                <span class="info-pill">Review &amp; Edit Workflow</span>
+                <span class="info-pill">Expense Categorization</span>
+                <span class="info-pill">Searchable Archive</span>
+                <span class="info-pill">Export-Ready Summaries</span>
+              </div>
+            </div>
+
+            <div class="info-group">
+              <h4>Dataset &amp; Logic</h4>
+              <ul class="info-list">
+                <li>Receipts normalized into structured fields: vendor, date, subtotal/tax/total, receipt number.</li>
+                <li>Confidence scoring and tier tracking to control when AI fallback is required.</li>
+                <li>Draft vs confirmed state to ensure user-reviewed accuracy before storage.</li>
+                <li>Designed for real-world edits: quick correction of vendor names, dates, and tax totals.</li>
+                <li>Storage is local-first (privacy-friendly) and can be extended to cloud sync later.</li>
+              </ul>
+            </div>
+
+            <div class="info-group">
+              <h4>Business Value</h4>
+              <ul class="info-list">
+                <li>Transforms unstructured receipts into consistent records suitable for expense tracking and audits.</li>
+                <li>Reduces manual entry time while maintaining accuracy via confirmation-first UX.</li>
+                <li>Improves searchability and organization for busy users with many receipts.</li>
+                <li>Demonstrates production-minded native mobile engineering: Vision OCR + clean data modeling.</li>
+                <li>Built with a “trust layer” that makes AI outputs reviewable and explainable.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-navigation-wrap">
+      <div class="container project-navigation single-next">
+        <a class="project-nav-link next" href="project-opscore.html">
+          <span class="nav-label">Next Project &rarr;</span>
+          <span class="nav-title">Innobi OpsCore Platform</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Innobi &mdash; Data Engineering &middot; BI &middot; Cloud Architecture</p>
+    <p class="legal-disclaimer">
+      All dashboards, code, text, and visual assets on this site are original works of Innobi and are protected by intellectual property and copyright laws. To avoid any legal or contractual issues, please obtain prior written permission by email before quoting, copying, or redistributing any content. For the protection of its confidentiality and intellectual property rights, Innobi works with Civil Litigation Lawyers Firm for the Americas and with Sezen Law Firm (Gokhan Sezen) for Turkey and Europe.
+    </p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('dark-icon');
+    const lightIcon = document.getElementById('light-icon');
+    const siteLogo = document.getElementById('site-logo');
+
+    const applyTheme = (theme) => {
+      const isLight = theme === 'light';
+      document.body.classList.toggle('light-theme', isLight);
+
+      if (siteLogo) {
+        siteLogo.src = isLight
+          ? 'assets/img/LightModeLogo.png'
+          : 'assets/img/DarkModeLogo.png';
+      }
+
+      if (isLight) {
+        localStorage.setItem('theme', 'light');
+        darkIcon.classList.remove('hidden');
+        lightIcon.classList.add('hidden');
+      } else {
+        localStorage.setItem('theme', 'dark');
+        darkIcon.classList.add('hidden');
+        lightIcon.classList.remove('hidden');
+      }
+    };
+
+    const storedTheme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+    applyTheme(storedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(nextTheme);
+    });
+
+    // Simple project views slider
+    (function () {
+      const frame = document.querySelector('.project-views-frame');
+      if (!frame) return;
+
+      const slides = Array.from(frame.querySelectorAll('.project-view'));
+      const dots = Array.from(document.querySelectorAll('.project-views-dot'));
+      const prev = document.querySelector('.project-views-nav-prev');
+      const next = document.querySelector('.project-views-nav-next');
+      const indexLabel = document.getElementById('projectViewIndex');
+      const totalLabel = document.getElementById('projectViewTotal');
+
+      let current = 0;
+      let autoTimer = null;
+
+      const showSlide = (index) => {
+        if (!slides.length) return;
+        const total = slides.length;
+        current = (index + total) % total;
+
+        slides.forEach((img, i) => {
+          img.classList.toggle('active', i === current);
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === current);
+        });
+
+        if (indexLabel) {
+          indexLabel.textContent = String(current + 1);
+        }
+        if (totalLabel) {
+          totalLabel.textContent = String(total);
+        }
+      };
+
+      const scheduleAutoAdvance = () => {
+        if (autoTimer) window.clearInterval(autoTimer);
+        autoTimer = window.setInterval(() => {
+          showSlide(current + 1);
+        }, 4000);
+      };
+
+      if (prev) {
+        prev.addEventListener('click', () => showSlide(current - 1));
+      }
+      if (next) {
+        next.addEventListener('click', () => showSlide(current + 1));
+      }
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const idx = Number(dot.dataset.index) || 0;
+          showSlide(idx);
+        });
+      });
+
+      showSlide(0);
+      scheduleAutoAdvance();
+
+      [prev, next, ...dots].forEach((el) => {
+        if (!el) return;
+        el.addEventListener('click', scheduleAutoAdvance);
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const dropdownTargets = document.querySelectorAll('.dropdown-category-header[data-tab-target], .dropdown-item[data-tab-target]');
+      if (!dropdownTargets.length) return;
+
+      const navigateToProjects = (target) => {
+        if (target) {
+          localStorage.setItem('preferredProjectsTab', target);
+        }
+        window.location.href = 'index.html#projects';
+      };
+
+      dropdownTargets.forEach((el) => {
+        el.addEventListener('click', (event) => {
+          event.preventDefault();
+          const target = el.dataset.tabTarget;
+          if (!target) return;
+          navigateToProjects(target);
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

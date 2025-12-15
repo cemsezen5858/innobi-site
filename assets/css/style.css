@@ -397,7 +397,8 @@ body.light-theme .pill-success {
     0 0 24px rgba(15,23,42,0.9),
     0 0 32px rgba(56,189,248,0.35);
   background: radial-gradient(circle at top left, rgba(15,23,42,0.9), rgba(15,23,42,0.95));
-  aspect-ratio: 16 / 9;
+  height: clamp(520px, 70vh, 700px);
+  min-height: 520px;
 }
 
 .project-view {
@@ -421,7 +422,7 @@ body.light-theme .pill-success {
 .project-view img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project-views-nav {
