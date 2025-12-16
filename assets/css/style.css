@@ -1714,6 +1714,31 @@ body.light-theme .mobile-subitem:hover {
   }
 }
 
+.code-window pre,
+.code-window code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 540px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .ops-gallery,
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .ops-card,
+  .card,
+  .project-info-card,
+  .project-summary-card {
+    padding: 1.6rem;
+  }
+}
+
 .project-summary .badge-original {
   padding: 0.25rem 0.7rem;
   font-size: 0.75rem;
