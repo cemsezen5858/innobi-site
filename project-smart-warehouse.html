@@ -6,7 +6,7 @@
   <title>Smart Warehouse Digital Twin and Restocking Intelligence | Innobi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css?v=fixed" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -510,6 +510,60 @@ IF (
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+
+  <script>
+    (function () {
+      const mobileBreakpoint = 620;
+      const navbar = document.querySelector('.navbar');
+      const dropdownBtn = document.querySelector('.dropdown-btn');
+      const dropdownPanel = document.querySelector('.dropdown-panel');
+      let dropdownListener = null;
+      let lastScrollY = window.scrollY;
+
+      const enableMobileDropdown = () => {
+        if (!dropdownBtn || !dropdownPanel || dropdownListener) return;
+        dropdownPanel.style.display = 'none';
+        dropdownListener = () => {
+          dropdownPanel.style.display = dropdownPanel.style.display === 'block' ? 'none' : 'block';
+        };
+        dropdownBtn.addEventListener('click', dropdownListener);
+      };
+
+      const disableMobileDropdown = () => {
+        if (!dropdownBtn || !dropdownPanel || !dropdownListener) return;
+        dropdownBtn.removeEventListener('click', dropdownListener);
+        dropdownPanel.style.display = '';
+        dropdownListener = null;
+      };
+
+      const syncDropdownMode = () => {
+        if (window.innerWidth <= mobileBreakpoint) {
+          enableMobileDropdown();
+        } else {
+          disableMobileDropdown();
+        }
+      };
+
+      syncDropdownMode();
+      window.addEventListener('resize', syncDropdownMode);
+
+      window.addEventListener('scroll', () => {
+        if (!navbar) return;
+        if (window.innerWidth <= mobileBreakpoint) {
+          navbar.style.transform = window.scrollY > lastScrollY ? 'translateY(-100%)' : 'translateY(0)';
+        } else {
+          navbar.style.transform = 'translateY(0)';
+        }
+        lastScrollY = window.scrollY;
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > mobileBreakpoint && navbar) {
+          navbar.style.transform = 'translateY(0)';
+        }
+      });
+    })();
+  </script>
 
   <script>
     const themeToggle = document.getElementById('theme-toggle');

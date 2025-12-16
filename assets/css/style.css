@@ -9,7 +9,6 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: #0a0f1d;
   color: #e5e7eb;
   overflow-x: hidden;
   line-height: 1.6;
@@ -1051,6 +1050,7 @@ body.light-theme .info-pill {
   position: fixed;
   inset: 0;
   z-index: -3;
+  background-color: #0a0f1d;
 }
 
 /* glow gradient */
