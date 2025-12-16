@@ -181,9 +181,27 @@
             </svg>
           </button>
         </div>
+        <button class="nav-burger" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </div>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <button class="mobile-toggle mobile-link" type="button" data-target="mobileProjects">
+      Projects <span class="chevron">⌄</span>
+    </button>
+    <div class="mobile-submenu" id="mobileProjects">
+      <a href="#projects" data-tab-target="analytics">BI &amp; Analytics Platforms</a>
+      <a href="#projects" data-tab-target="operations">Operational &amp; Web Systems</a>
+      <a href="#projects" data-tab-target="mobile">Mobile &amp; Native Solutions</a>
+    </div>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <button class="mobile-link" type="button" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
 
 
   <!-- ========================= -->
@@ -918,59 +936,40 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script>
     const mobileBreakpoint = 620;
-    const dropdownBtn = document.querySelector('.dropdown-btn');
-    const dropdownPanel = document.querySelector('.dropdown-panel');
-    let dropdownListener = null;
-
-    const enableMobileDropdown = () => {
-      if (!dropdownBtn || !dropdownPanel || dropdownListener) return;
-      dropdownPanel.style.display = 'none';
-      dropdownListener = () => {
-        dropdownPanel.style.display = dropdownPanel.style.display === 'block' ? 'none' : 'block';
-      };
-      dropdownBtn.addEventListener('click', dropdownListener);
-    };
-
-    const disableMobileDropdown = () => {
-      if (!dropdownBtn || !dropdownPanel || !dropdownListener) return;
-      dropdownBtn.removeEventListener('click', dropdownListener);
-      dropdownPanel.style.display = '';
-      dropdownListener = null;
-    };
-
-    const syncDropdownMode = () => {
-      if (window.innerWidth <= mobileBreakpoint) {
-        enableMobileDropdown();
-      } else {
-        disableMobileDropdown();
-      }
-    };
-
-    syncDropdownMode();
-    window.addEventListener('resize', syncDropdownMode);
-
-    // Navbar hide on scroll for mobile
     const navbar = document.querySelector('.navbar');
-    let lastScrollY = window.scrollY;
+    const burger = document.querySelector('.nav-burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileToggle = mobileMenu?.querySelector('.mobile-toggle');
 
-    window.addEventListener('scroll', () => {
-      if (window.innerWidth <= mobileBreakpoint) {
-        if (window.scrollY > lastScrollY) {
-          // Scrolling down
-          navbar.style.transform = 'translateY(-100%)';
-        } else {
-          // Scrolling up
-          navbar.style.transform = 'translateY(0)';
-        }
-      } else {
-        navbar.style.transform = 'translateY(0)';
-      }
-      lastScrollY = window.scrollY;
+    const closeMobileMenu = () => {
+      if (mobileMenu) mobileMenu.classList.remove('open');
+      if (burger) burger.classList.remove('open');
+      if (burger) burger.setAttribute('aria-expanded', 'false');
+    };
+
+    burger?.addEventListener('click', () => {
+      const isOpen = mobileMenu?.classList.contains('open');
+      mobileMenu?.classList.toggle('open');
+      burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    mobileMenu?.querySelectorAll('a, button.mobile-link').forEach((el) => {
+      el.addEventListener('click', () => closeMobileMenu());
+    });
+
+    mobileToggle?.addEventListener('click', () => {
+      mobileToggle.classList.toggle('open');
+      const target = document.getElementById(mobileToggle.dataset.target);
+      if (target) target.classList.toggle('open');
     });
 
     window.addEventListener('resize', () => {
       if (window.innerWidth > mobileBreakpoint) {
-        navbar.style.transform = 'translateY(0)';
+        closeMobileMenu();
+        mobileToggle?.classList.remove('open');
+        const target = mobileToggle ? document.getElementById(mobileToggle.dataset.target) : null;
+        if (target) target.classList.remove('open');
       }
     });
 
@@ -1010,6 +1009,12 @@
       if (window.radarInstances) {
         Object.values(window.radarInstances).forEach((chart) => chart.update());
       }
+    });
+
+    // Mobile theme toggle proxy
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+    mobileThemeToggle?.addEventListener('click', () => {
+      themeToggle?.click();
     });
 
     // Radar Charts (Core Skills Overlays)

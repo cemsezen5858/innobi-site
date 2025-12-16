@@ -159,9 +159,27 @@
             </svg>
           </button>
         </div>
+        <button class="nav-burger" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </div>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#home" class="mobile-link">Home</a>
+    <a href="index.html#about" class="mobile-link">About</a>
+    <button class="mobile-toggle mobile-link" type="button" data-target="mobileProjects">
+      Projects <span class="chevron">⌄</span>
+    </button>
+    <div class="mobile-submenu" id="mobileProjects">
+      <a href="index.html#projects" data-tab-target="analytics">BI &amp; Analytics Platforms</a>
+      <a href="index.html#projects" data-tab-target="operations">Operational &amp; Web Systems</a>
+      <a href="index.html#projects" data-tab-target="mobile">Mobile &amp; Native Solutions</a>
+    </div>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+    <button class="mobile-link" type="button" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
 
   <section class="section project-summary">
     <div class="container">
@@ -527,52 +545,47 @@ export function upsertApproval(options: UpsertApprovalOptions): ApprovalRecord {
 
   <script>
     (function () {
-      const mobileBreakpoint = 620;
+      const mobileBreakpoint = 720;
       const navbar = document.querySelector('.navbar');
-      const dropdownBtn = document.querySelector('.dropdown-btn');
-      const dropdownPanel = document.querySelector('.dropdown-panel');
-      let dropdownListener = null;
-      let lastScrollY = window.scrollY;
+      const burger = document.querySelector('.nav-burger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileToggle = mobileMenu?.querySelector('.mobile-toggle');
 
-      const enableMobileDropdown = () => {
-        if (!dropdownBtn || !dropdownPanel || dropdownListener) return;
-        dropdownPanel.style.display = 'none';
-        dropdownListener = () => {
-          dropdownPanel.style.display = dropdownPanel.style.display === 'block' ? 'none' : 'block';
-        };
-        dropdownBtn.addEventListener('click', dropdownListener);
+      const closeMobileMenu = () => {
+        mobileMenu?.classList.remove('open');
+        burger?.classList.remove('open');
+        burger?.setAttribute('aria-expanded', 'false');
+        mobileToggle?.classList.remove('open');
+        const target = mobileToggle ? document.getElementById(mobileToggle.dataset.target) : null;
+        target?.classList.remove('open');
       };
 
-      const disableMobileDropdown = () => {
-        if (!dropdownBtn || !dropdownPanel || !dropdownListener) return;
-        dropdownBtn.removeEventListener('click', dropdownListener);
-        dropdownPanel.style.display = '';
-        dropdownListener = null;
-      };
+      burger?.addEventListener('click', () => {
+        const isOpen = mobileMenu?.classList.contains('open');
+        mobileMenu?.classList.toggle('open');
+        burger?.classList.toggle('open');
+        burger?.setAttribute('aria-expanded', String(!isOpen));
+      });
 
-      const syncDropdownMode = () => {
-        if (window.innerWidth <= mobileBreakpoint) {
-          enableMobileDropdown();
-        } else {
-          disableMobileDropdown();
-        }
-      };
+      mobileMenu?.querySelectorAll('a, button.mobile-link').forEach((el) => {
+        el.addEventListener('click', () => closeMobileMenu());
+      });
 
-      syncDropdownMode();
-      window.addEventListener('resize', syncDropdownMode);
-
-      window.addEventListener('scroll', () => {
-        if (!navbar) return;
-        if (window.innerWidth <= mobileBreakpoint) {
-          navbar.style.transform = window.scrollY > lastScrollY ? 'translateY(-100%)' : 'translateY(0)';
-        } else {
-          navbar.style.transform = 'translateY(0)';
-        }
-        lastScrollY = window.scrollY;
+      mobileToggle?.addEventListener('click', () => {
+        mobileToggle.classList.toggle('open');
+        const target = document.getElementById(mobileToggle.dataset.target);
+        target?.classList.toggle('open');
       });
 
       window.addEventListener('resize', () => {
-        if (window.innerWidth > mobileBreakpoint && navbar) {
+        if (window.innerWidth > mobileBreakpoint) {
+          closeMobileMenu();
+        }
+      });
+
+      window.addEventListener('scroll', () => {
+        if (!navbar) return;
+        if (window.innerWidth > mobileBreakpoint) {
           navbar.style.transform = 'translateY(0)';
         }
       });
@@ -612,6 +625,11 @@ export function upsertApproval(options: UpsertApprovalOptions): ApprovalRecord {
     themeToggle.addEventListener('click', () => {
       const nextTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
       applyTheme(nextTheme);
+    });
+
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+    mobileThemeToggle?.addEventListener('click', () => {
+      themeToggle?.click();
     });
 
     // Simple project views slider
